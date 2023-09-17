@@ -1,0 +1,175 @@
+﻿ID,name,level,region,capital,currency
+1,Afghanistan,M,AS,Kabul,Afghani
+2,Albania,M,EU,Tirane,Lek
+3,Algeria,M,AF,Algiers,Dinar
+4,Andorra,M,EU,Andorra la Vella,Euro
+5,Angola,M,AF,Luanda,New Kwanza
+7,Argentina,E,AM,Buenos Aires,Peso
+8,Armenia,M,AS,Yerevan,Dram
+9,Australia,E,OC,Canberra,Australian dollar
+10,Austria,E,EU,Vienna,Euro
+11,Azerbaijan,H,AS,Baku,Manat
+12,The Bahamas,H,AM,Nassau,Bahamian dollar
+13,Bahrain,H,AS,Manama,Bahrain dinar
+14,Bangladesh,H,AS,Dhaka,Taka
+16,Belarus,E,EU,Minsk,Belorussian ruble
+17,Belgium,E,EU,Brussels,Euro
+18,Belize,H,AM,Belmopan,Belize dollar
+19,Benin,H,AF,Porto-Novo,CFA Franc
+20,Bhutan,H,AS,Thimphu,Ngultrum
+21,Bolivia,E,AM,La Paz,Boliviano
+22,Bosnia and Herzegovina,M,EU,Sarajevo,Convertible Mark
+23,Botswana,M,AF,Gaborone,Pula
+24,Brazil,E,AM,Brasilia,Real
+25,Brunei,H,AS,Bandar Seri Begawan,Brunei dollar
+26,Bulgaria,M,EU,Sofia,Lev
+27,Burkina Faso,H,AF,Ouagadougou,CFA Franc
+28,Burundi,H,AF,Gitega,Burundi franc
+29,Cambodia,M,AS,Phnom Penh,Riel
+30,Cameroon,M,AF,Yaounde,CFA Franc
+31,Canada,E,AM,Ottawa,Canadian dollar
+32,Cape Verde,H,AF,Praia,Cape Verdean escudo
+33,Central African Republic,M,AF,Bangui,CFA Franc
+34,Chad,H,AF,N'Djamena,CFA Franc
+35,Chile,E,AM,Santiago,Chilean Peso
+36,China,E,AS,Beijing,Chinese Yuan
+37,Colombia,E,AM,Bogota,Colombian Peso
+38,Comoros,H,AF,Moroni,Franc
+39,Republic of the Congo,M,AF,Brazzaville,CFA Franc
+40,"Congo, Democratic Republic of the",M,AF,Kinshasa,Congolese franc
+41,Costa Rica,M,AM,San Jose,Colón
+42,Cote d'Ivore,H,AF,Yamoussoukro,CFA Franc
+43,Croatia,E,EU,Zagreb,Croatian
+44,Cuba,E,AM,Havana,Cuban Peso
+45,Cyprus,E,EU,Nicosia,Euro
+46,Czech Republic,E,EU,Prague,Koruna
+47,Denmark,E,EU,Copenhagen,Danish Krone
+48,Djibouti,H,AF,Djibouti,Djiboutian franc
+50,Dominican Republic,H,AM,Santo Domingo,Dominican Peso
+51,East Timor (Timor-Leste),H,AS,Dili,U.S. dollar
+52,Ecuador,M,AM,Quito,U.S. dollar
+53,Egypt,E,AF,Cairo,Egyptian pound
+54,El Salvador,H,AM,San Salvador,Colón; U.S. dollar
+55,Equatorial Guinea,H,AF,Malabo,CFA Franc
+56,Eritrea,H,AF,Asmara,Nakfa
+57,Estonia,E,EU,Tallinn,Euro
+58,Ethiopia,M,AF,Addis Ababa,Birr
+60,Finland,E,EU,Helsinki,Euro
+61,France,E,EU,Paris,Euro
+62,Gabon,H,AF,Libreville,CFA Franc
+63,The Gambia,H,AF,Banjul,Dalasi
+64,Georgia,M,AS,Tbilisi,Lari
+65,Germany,E,EU,Berlin,Euro
+66,Ghana,H,AF,Accra,Cedi
+67,Greece,E,EU,Athens,Euro
+69,Guatemala,M,AM,Guatemala City,Quetzal
+70,Guinea,H,AF,Conakry,Guinean franc
+71,Guinea-Bissau,H,AF,Bissau,CFA Franc
+72,Guyana,M,AM,Georgetown,Guyanese dollar
+73,Haiti,M,AM,Port-au-Prince,Gourde
+74,Honduras,M,AM,Tegucigalpa,Lempira
+75,Hungary,E,EU,Budapest,Forint
+76,Iceland,E,EU,Reykjavik,Icelandic króna
+77,India,E,AS,New Delhi,Indian Rupee
+78,Indonesia,E,AS,Jakarta,Rupiah
+79,Iran,E,AS,Tehran,Rial
+80,Iraq,M,AS,Baghdad,Iraqi Dinar
+81,Ireland,E,EU,Dublin,Euro
+82,Israel,E,AS,Jerusalem*,Shekel
+83,Italy,E,EU,Rome,Euro
+84,Jamaica,M,AM,Kingston,Jamaican dollar
+85,Japan,E,AS,Tokyo,Yen
+86,Jordan,H,AS,Amman,Jordanian dinar
+87,Kazakhstan,M,AS,Nur Sultan,Tenge
+88,Kenya,M,AF,Nairobi,Kenya shilling
+90,"Korea, North",E,AS,Pyongyang,Won
+91,"Korea, South",E,AS,Seoul,Won
+93,Kuwait,H,AS,Kuwait City,Kuwaiti Dollar
+94,Kyrgyzstan,H,AS,Bishkek,Som
+95,Laos,M,AS,Vientiane,New Kip
+96,Latvia,E,EU,Riga,Lats
+97,Lebanon,M,AS,Beirut,Lebanese pound
+98,Lesotho,M,AF,Maseru,Maluti
+99,Liberia,H,AF,Monrovia,Liberian dollar
+100,Libya,M,AF,Tripoli,Libyan dinar
+101,Liechtenstein,E,EU,Vaduz,Swiss franc
+102,Lithuania,E,EU,Vilnius,Litas
+103,Luxembourg,E,EU,Luxembourg,Euro
+104,Macedonia,E,EU,Skopje,Denar
+105,Madagascar,M,AF,Antananarivo,Malagasy Ariary
+106,Malawi,H,AF,Lilongwe,Kwacha
+107,Malaysia,M,AS,Kuala Lumpur,Ringgit
+108,Maldives,H,AS,Male,Rufiyaa
+109,Mali,M,AF,Bamako,CFA Franc
+110,Malta,E,EU,Valletta,Euro
+112,Mauritania,M,AF,Nouakchott,Ouguiya
+114,Mexico,E,AM,Mexico City,Mexican peso
+116,Moldova,E,EU,Chisinau,Leu
+117,Monaco,E,EU,Monte Carlo,Euro
+118,Mongolia,E,AS,Ulaanbaatar,Togrog
+119,Montenegro,E,EU,Podgorica,Euro
+120,Morocco,E,AF,Rabat,Dirham
+121,Mozambique,H,AF,Maputo,Metical
+122,Myanmar (Burma),M,AS,Nay Pyi Taw,Kyat
+123,Namibia,H,AF,Windhoek,Namibian dollar
+125,Nepal,E,AS,Kathmandu,Nepalese rupee
+126,Netherlands,E,EU,Amsterdam,Euro
+127,New Zealand,E,OC,Wellington,New Zealand dollar
+128,Nicaragua,M,AM,Managua,Gold cordoba
+129,Niger,H,AF,Niamey,CFA Franc
+130,Nigeria,H,AF,Abuja,Naira
+131,Norway,E,EU,Oslo,Norwegian krone
+132,Oman,M,AS,Muscat,Omani rial
+133,Pakistan,M,AS,Islamabad,Pakistani rupee
+135,Palestine,M,AS,"Ramallah, East Jerusalem",Palestine Pound
+136,Panama,E,AM,Panama City,Balboa; U.S. dollar
+137,Papua New Guinea,E,OC,Port Moresby,Kina
+138,Paraguay,M,AM,Asuncion,Guaraní
+139,Peru,M,AM,Lima,Nuevo sol 
+140,Philippines,M,AS,Manila,Peso
+141,Poland,E,EU,Warsaw,Zloty
+142,Portugal,E,EU,Lisbon,Euro
+143,Qatar,H,AS,Doha,Qatari riyal
+144,Romania,E,EU,Bucharest,Romanian Rupee
+145,Russia,E,EU,Moscow,Ruble
+146,Rwanda,H,AF,Kigali,Rwandan franc
+151,San Marino,E,EU,San Marino,Euro
+153,Saudi Arabia,E,AS,Riyadh,Riyal
+154,Senegal,M,AF,Dakar,CFA Franc
+155,Serbia,E,EU,Belgrade,Serbian Dinar
+157,Sierra Leone,H,AF,Freetown,Leone
+158,Singapore,M,AS,Singapore,Singapore dollar
+159,Slovakia,E,EU,Bratislava,Euro
+160,Slovenia,E,EU,Ljubljana,Euro
+162,Somalia,M,AF,Mogadishu,Somali shilling
+163,South Africa,E,AF,"Pretoria, Cape Town (legislative); Bloemfontein (judiciary)",Rand
+164,South Sudan,H,AF,Juba,Sudanese Pound
+165,Spain,E,EU,Madrid,Euro
+166,Sri Lanka,E,AS,Colombo,Sri Lankan rupee
+167,Sudan,,AF,Khartoum,Sudanese Pound
+168,Suriname,H,AM,Paramaribo,Surinamese dollar
+169,Swaziland,H,AF,Mbabane,Lilangeni
+170,Sweden,E,EU,Stockholm,Krona
+171,Switzerland,E,EU,Berne,Swiss franc
+172,Syria,M,AF,Damascus,Syrian pound
+173,Taiwan,E,AS,Taipei,Taiwan dollar
+174,Tajikistan,H,AS,Dushanbe,somoni
+175,Tanzania,H,AF,Dar es Salaam,Tanzanian shilling
+176,Thailand,M,AS,Bangkok,Baht
+177,Togo,H,AF,Lome,CFA Franc
+180,Tunisia,M,AF,Tunis,Tunisian dinar
+181,Turkey,E,EU,Ankara,Turkish lira
+182,Turkmenistan,H,AS,Ashgabat,Manat
+184,Uganda,H,AF,Kampala,Ugandan new shilling
+185,Ukraine,E,EU,Kiev,Hryvnia
+186,United Arab Emirates,E,AS,Abu Dhabi,U.A.E. Dirham
+187,United Kingdom,E,EU,London,Pound sterling
+188,United States of America,E,AM,Washington D.C.,Dollar
+189,Uruguay,M,AM,Montevideo,Uruguay peso
+190,Uzbekistan,H,AS,Tashkent,Uzbekistani sum
+192,Vatican City (Holy See),E,EU,Vatican City,Euro
+193,Venezuela,E,AM,Caracas,Bolivar
+194,Vietnam,M,AS,Hanoi,Dong
+195,Yemen,M,AF,Sanaa,Rial
+196,Zambia,M,AF,Lusaka,Kwacha
+197,Zimbabwe,M,AF,Harare,United States dollar
