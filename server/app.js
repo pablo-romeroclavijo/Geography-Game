@@ -5,6 +5,7 @@ const cors = require('cors');
 const logger = require("./logger");
 const countryDB = require('./assets/countryDB.json')
 const scoreBoard = require('./assets/scoreBoard.json')
+const fs = require('fs')
 
 
 
@@ -55,6 +56,23 @@ app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"leve
         res.status(200).send(JSON.stringify(countries))
     }
 )
+
+app.get('/image/:type/:ID', (req, res)=>{
+    const type = req.params.type
+    const ID = req.params.ID
+    let prefix = undefined
+    let fileType = undefined
+    if(type == 'maps'){
+        fileType = 'png'
+        prefix = 'm'
+    }else if(type == 'flags'){
+        fileType = 'gif'
+        prefix = 'f'
+    }
+    const img = fs.readFileSync(`./assets/${type}/${prefix}${ID}.${fileType}`)
+    console.log(img)
+    res.send(img)
+})
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
