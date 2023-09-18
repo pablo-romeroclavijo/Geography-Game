@@ -65,7 +65,7 @@ app.post('/updateScore', (req, res) =>{
 
 app.get('/scoreBoard', (req, res) => {
     const sortedScoreBoard = scoreBoard.sort((a, b) => b.score - a.score)
-    const topScore = sortedScoreBoard.slice(0, 9)
+    const topScore = sortedScoreBoard.slice(0, 10)
     console.log(topScore)
     res.status(200).send(JSON.stringify(topScore))
 })
