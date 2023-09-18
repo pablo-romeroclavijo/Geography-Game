@@ -53,9 +53,12 @@ app.post('/updateScore', (req, res) =>{
     res.status(201).send('Saved')
 })
 
-// app.get('getScoreBoard', (req, res) => {
-
-// })
+app.get('/scoreBoard', (req, res) => {
+    // const scoreBoard = req.body
+    const sortedScoreBoard = scoreBoard.sort((a, b) => b.score - a.score)
+    console.log(scoreBoard)
+    res.status(200).send(sortedScoreBoard)
+})
 
 
 // functions
