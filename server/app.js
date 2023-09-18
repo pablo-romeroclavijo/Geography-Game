@@ -21,9 +21,6 @@ app.get('/', (req,res) => {
     res.status(200).send('Welcome to Geo-App')
 })
 
-
-app.get('/assets/Maps/')
-
 app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
     const body = req.body
     if(Object.keys(body).length == 0){
