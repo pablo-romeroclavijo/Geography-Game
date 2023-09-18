@@ -35,11 +35,10 @@ app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"leve
         const numberRequests = Number(req.params.numberRequests)
 
         const filteredDB = countryDB.filter(x => (x.level == level && x.region == region) )
-        console.log(filteredDB)
         let countryIndexes = []
         for(i=0; i < numberRequests; i){
             randomIndex = Math.floor(Math.random()*filteredDB.length)
-            if(!(randomIndex in countryIndexes)){
+            if(!(countryIndexes.includes(randomIndex))){
                 countryIndexes.push(randomIndex)
                 i++
             }        
@@ -70,7 +69,6 @@ app.get('/image/:type/:ID', (req, res)=>{
         prefix = 'f'
     }
     const img = fs.readFileSync(`./assets/${type}/${prefix}${ID}.${fileType}`)
-    console.log(img)
     res.send(img)
 })
 
