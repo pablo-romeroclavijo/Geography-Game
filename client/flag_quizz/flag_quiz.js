@@ -17,7 +17,7 @@ function createQuestion(data){
   trueAnswer = countries[randomIndex]
 
   let quest = document.createElement('p')
-  quest.textContent = `What is the flag of ${trueAnswer.name}`
+  quest.textContent = `What is the flag of ${trueAnswer.name}?`
   options.appendChild(quest)
 
   for(country in countries){
@@ -47,10 +47,10 @@ function addImage(url, ID){
 
   let img = document.createElement('img')
   img.src = url
+  img.width = 150
   label.appendChild(img)
 
 }
-
 
 function getCountries(e){
   e.preventDefault()
@@ -85,6 +85,7 @@ async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch
   try {
     const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
+    console.log(response.status)
     if(response.ok){
         const data = await  response.json()
         createQuestion(data)
@@ -106,7 +107,7 @@ async function fetchImage(type, ID) {
       console.log(imageURL)
       addImage(imageURL, ID)
     }
-    else {throw 'Error status: ' + res.status}
+    else {throw 'Error status: ' + response.status}
   }
   // catch(e){console.log('error at  catch')}
 // }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Quiz Game</title>
+    <script defer src="./flash_cards.js" ></script>
+</head>
+<body>
+    <section>
+        <form id="level">
+            <h3>Select from Level and Region</h3>
+                <label for="region">Region:</label>
+                <select id="region" name="region">
+                    <option value = 'all'>All</option>
+                    <option value="EU">Europa</option>
+                    <option value="AF">Africa</option>
+                    <option value="AM">America</option>
+                    <option value="OC">Oceania</option>
+                    <option value="AS">Asia</option>
+                </select>
+                
+                <br>
+                
+                <label for="level">Level:</label>
+                <select id="level" name="level">
+                    <option value = 'all'>All</option>
+                    <option value="E">Easy</option>
+                    <option value="M">Medium</option>
+                    <option value="H">Hard</option>
+                </select>
+    
+                <br>
+                
+                <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <section >
+        <box id="flashCard">
+
+        </box>
+       
+    </section>
+
+    
+</body>
+</html>
