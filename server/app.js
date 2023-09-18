@@ -53,16 +53,18 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
         res.status(200).send(JSON.stringify(countries))}
     })
 
-app.post('/updateScore', (req, res) =>{      //{"username": "blabla", "score":"12331"}
+app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
     scoreBoard.push({username, score})
     res.status(201).send('Saved')
-    console.log(scoreBoard)
 })
 
-// app.get('getScoreBoard', (req, res) => {
-
-// })
+app.get('/scoreBoard', (req, res) => {
+    // const scoreBoard = req.body
+    const sortedScoreBoard = scoreBoard.sort((a, b) => b.score - a.score)
+    console.log(scoreBoard)
+    res.status(200).send(sortedScoreBoard)
+})
 
 
 // functions
