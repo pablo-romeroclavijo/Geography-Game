@@ -67,7 +67,7 @@ app.get('/scoreBoard', (req, res) => {
     // const scoreBoard = req.body
     const sortedScoreBoard = scoreBoard.sort((a, b) => b.score - a.score)
     console.log(scoreBoard)
-    res.status(200).send(sortedScoreBoard)
+    res.status(200).send(JSON.stringify(sortedScoreBoard))
 })
 
 
