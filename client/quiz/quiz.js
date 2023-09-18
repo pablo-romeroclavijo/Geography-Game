@@ -1,12 +1,14 @@
 
-const qmap = document.querySelector("#questions")
+const questions = document.querySelector("#questions")
 const setting = document.querySelector("#setting")
+
 
 setting.addEventListener("submit",getCountries)
 
 let id
 let countries = {}
 
+hbk
 function startQuiz(q){
   q.forEach(element => {
     console.log(element)
@@ -18,14 +20,11 @@ function startQuiz(q){
   showmap(id)
 }
 
-
-
-
 function showmap(id){
   const image = document.createElement("img")
   image.src = `../../server/assets/Maps/m${id}.png`
   image.width = 1500
-  qmap.appendChild(image)
+  questions.appendChild(image)
 }
 function getCountries(e){
   e.preventDefault()
@@ -33,8 +32,6 @@ function getCountries(e){
   fetchCountries(level, region, numberRequests)
 
 }
-    
-
 
 async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch

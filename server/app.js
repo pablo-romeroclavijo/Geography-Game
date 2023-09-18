@@ -28,7 +28,6 @@ app.get('/countries', (req, res) => {
 
 
 app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
-
         const level = req.params.level
         const region = req.params.region
         const numberRequests = Number(req.params.numberRequests)
