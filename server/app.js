@@ -47,10 +47,11 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
     res.status(200).send(JSON.stringify(countries))
 })
 
-app.post('/updateScore', (req, res) =>{
+app.post('/updateScore', (req, res) =>{      //{"username": "blabla", "score":"12331"}
     const {username, score} = req.body
     scoreBoard.push({username, score})
     res.status(201).send('Saved')
+    console.log(scoreBoard)
 })
 
 // app.get('getScoreBoard', (req, res) => {
