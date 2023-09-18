@@ -21,23 +21,20 @@ app.get('/', (req,res) => {
     res.status(200).send('Welcome to Geo-App')
 })
 
+app.get('/countries', (req, res) => { 
+    console.log(countryDB)
+    res.status(200).send(JSON.stringify(countryDB))
+    })
 
 
-app.get('/assets/Maps/')
+app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
 
-app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
-    const body = req.body
-    if(Object.keys(body).length == 0){
-        console.log(countryDB)
-        res.status(200).send(JSON.stringify(countryDB))
-    }
-    else{
-        const level = req.body.level
-        const region = req.body.region
-        const numberRequests = Number(req.body.numberRequests)
+        const level = req.params.level
+        const region = req.params.region
+        const numberRequests = Number(req.params.numberRequests)
 
         const filteredDB = countryDB.filter(x => (x.level == level && x.region == region) )
-
+        console.log(filteredDB)
         let countryIndexes = []
         for(i=0; i < numberRequests; i){
             randomIndex = Math.floor(Math.random()*filteredDB.length)
@@ -46,16 +43,18 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
                 i++
             }        
         }
-
+        console.log(countryIndexes)
         let countries = []
         for(i in countryIndexes){
             let country = countryIndexes[i]
             countries.push(filteredDB[country])
         }
 
+
         console.log('Response: '+ countries)
-        res.status(200).send(JSON.stringify(countries))}
-    })
+        res.status(200).send(JSON.stringify(countries))
+    }
+)
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
@@ -70,7 +69,7 @@ app.get('/scoreBoard', (req, res) => {
     res.status(200).send(sortedScoreBoard)
 })
 
-
+ 
 // functions
 
 module.exports = app
