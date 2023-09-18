@@ -5,6 +5,7 @@ const cors = require('cors');
 const logger = require("./logger");
 const countryDB = require('./assets/countryDB.json')
 const scoreBoard = require('./assets/scoreBoard.json')
+const fs = require('fs')
 
 
 
@@ -31,29 +32,58 @@ app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"leve
         const level = req.params.level
         const region = req.params.region
         const numberRequests = Number(req.params.numberRequests)
+        let filteredDB = undefined
 
-        const filteredDB = countryDB.filter(x => (x.level == level && x.region == region) )
-        console.log(filteredDB)
-        let countryIndexes = []
-        for(i=0; i < numberRequests; i){
-            randomIndex = Math.floor(Math.random()*filteredDB.length)
-            if(!(randomIndex in countryIndexes)){
-                countryIndexes.push(randomIndex)
-                i++
-            }        
+
+        if(level == "all" && region !=="all"){filteredDB = countryDB.filter(x => (x.region == region))}
+        else if(region == "all" && level !== "all"){filteredDB = countryDB.filter(x => (x.level == level))}
+        else if(level == "all" && region == "all"){filteredDB = countryDB}
+        else {filteredDB = countryDB.filter(x => (x.level == level && x.region == region))}
+
+        if(filteredDB.length == 0){
+            console.log('No records found')
+            res.status(400)
         }
-        console.log(countryIndexes)
-        let countries = []
-        for(i in countryIndexes){
-            let country = countryIndexes[i]
-            countries.push(filteredDB[country])
+        else if(filteredDB.length < numberRequests){        //not enough countries in the filter
+            console.log('Response: '+ filteredDB)
+            res.status(200).send(JSON.stringify(filteredDB))
+        }else{
+
+            let countryIndexes = []
+            for(i=0; i < numberRequests; i){
+                randomIndex = Math.floor(Math.random()*filteredDB.length)
+                if(!(countryIndexes.includes(randomIndex))){
+                    countryIndexes.push(randomIndex)
+                    i++
+                }        
+            }
+            console.log(countryIndexes)
+            let countries = []
+            for(i in countryIndexes){
+                let country = countryIndexes[i]
+                countries.push(filteredDB[country])
+            }
+
+            res.status(200).send(JSON.stringify(countries))
         }
-
-
-        console.log('Response: '+ countries)
-        res.status(200).send(JSON.stringify(countries))
     }
 )
+
+app.get('/image/:type/:ID', (req, res)=>{
+    const type = req.params.type
+    const ID = req.params.ID
+    let prefix = undefined
+    let fileType = undefined
+    if(type == 'maps'){
+        fileType = 'png'
+        prefix = 'm'
+    }else if(type == 'flags'){
+        fileType = 'gif'
+        prefix = 'f'
+    }
+    const img = fs.readFileSync(`./assets/${type}/${prefix}${ID}.${fileType}`)
+    res.send(img)
+})
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body

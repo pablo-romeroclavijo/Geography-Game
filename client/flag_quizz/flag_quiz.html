@@ -12,6 +12,7 @@
             <h3>Select from Level and Region</h3>
                 <label for="region">Region:</label>
                 <select id="region" name="region">
+                    <option value = 'all'>All</option>
                     <option value="EU">Europa</option>
                     <option value="AF">Africa</option>
                     <option value="AM">America</option>
@@ -23,11 +24,12 @@
                 
                 <label for="level">Level:</label>
                 <select id="level" name="level">
+                    <option value = 'all'>All</option>
                     <option value="E">Easy</option>
                     <option value="M">Medium</option>
                     <option value="H">Hard</option>
                 </select>
-                
+    
                 <br>
                 
                 <input type="submit" value="Submit">
@@ -36,23 +38,17 @@
 
     <section>
         <form id = "question">
-            <p1> What is the name of this country </p1>
-                <input type="radio" name="answer" id="paris" value="paris">
-                <label for="paris">Paris</label><br>
-                
-                <input type="radio" name="answer" id="london" value="london">
-                <label for="london">London</label><br>
-                
-                <input type="radio" name="answer" id="berlin" value="berlin">
-                <label for="berlin">Berlin</label><br>
-                
-                <input type="radio" name="answer" id="rome" value="rome">
-                <label for="rome">Rome</label><br>
-                
-                <input type="submit" value="Submit">
-            
+   
+            <div id = 'options'>
+            </div>
+            <div id="answerSubmit">
+
+            </div>
             
         </form>
+    </section>
+    <section id = "result">
+        
     </section>
     
 </body>
