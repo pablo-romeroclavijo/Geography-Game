@@ -47,7 +47,6 @@ function addImage(url, ID){
 
   let img = document.createElement('img')
   img.src = url
-  img.width = 150
   label.appendChild(img)
 
 }
@@ -86,7 +85,6 @@ async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch
   try {
     const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
-    console.log(response.status)
     if(response.ok){
         const data = await  response.json()
         createQuestion(data)
@@ -100,7 +98,7 @@ async function fetchCountries(level, region, numberRequests) {
 async function fetchImage(type, ID) {
   
   //Make sure to add your deployed API URL in this fetch
-  // try {
+  try {
     const response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
     if(response.ok){
       const imageBlob = await response.blob()
@@ -108,7 +106,7 @@ async function fetchImage(type, ID) {
       console.log(imageURL)
       addImage(imageURL, ID)
     }
-    else {throw 'Error status: ' + response.status}
+    else {throw 'Error status: ' + res.status}
   }
-  // catch(e){console.log('error at  catch')}
-// }
+  catch(e){console.log('error at  catch')}
+}
