@@ -5,6 +5,7 @@ const cors = require('cors');
 const logger = require("./logger");
 const countryDB = require('./assets/countryDB.json')
 const scoreBoard = require('./assets/scoreBoard.json')
+const fs = require('fs')
 
 
 
@@ -21,41 +22,55 @@ app.get('/', (req,res) => {
     res.status(200).send('Welcome to Geo-App')
 })
 
+app.get('/countries', (req, res) => { 
+    console.log(countryDB)
+    res.status(200).send(JSON.stringify(countryDB))
+    })
 
 
-app.get('/assets/Maps/')
+app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
 
-app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numberRequests": "4"}
-    const body = req.body
-    if(Object.keys(body).length == 0){
-        console.log(countryDB)
-        res.status(200).send(JSON.stringify(countryDB))
-    }
-    else{
-        const level = req.body.level
-        const region = req.body.region
-        const numberRequests = Number(req.body.numberRequests)
+        const level = req.params.level
+        const region = req.params.region
+        const numberRequests = Number(req.params.numberRequests)
 
         const filteredDB = countryDB.filter(x => (x.level == level && x.region == region) )
-
         let countryIndexes = []
         for(i=0; i < numberRequests; i){
             randomIndex = Math.floor(Math.random()*filteredDB.length)
-            if(!(randomIndex in countryIndexes)){
+            if(!(countryIndexes.includes(randomIndex))){
                 countryIndexes.push(randomIndex)
                 i++
             }        
         }
-
+        console.log(countryIndexes)
         let countries = []
         for(i in countryIndexes){
             let country = countryIndexes[i]
             countries.push(filteredDB[country])
         }
 
+
         console.log('Response: '+ countries)
-        res.status(200).send(JSON.stringify(countries))}
-    })
+        res.status(200).send(JSON.stringify(countries))
+    }
+)
+
+app.get('/image/:type/:ID', (req, res)=>{
+    const type = req.params.type
+    const ID = req.params.ID
+    let prefix = undefined
+    let fileType = undefined
+    if(type == 'maps'){
+        fileType = 'png'
+        prefix = 'm'
+    }else if(type == 'flags'){
+        fileType = 'gif'
+        prefix = 'f'
+    }
+    const img = fs.readFileSync(`./assets/${type}/${prefix}${ID}.${fileType}`)
+    res.send(img)
+})
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
@@ -70,7 +85,7 @@ app.get('/scoreBoard', (req, res) => {
     res.status(200).send(sortedScoreBoard)
 })
 
-
+ 
 // functions
 
 module.exports = app
