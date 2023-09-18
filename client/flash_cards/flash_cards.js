@@ -1,98 +1,74 @@
 const query = document.querySelector("#level")
-const question = document.querySelector('#question')
-const options = document.querySelector('#options')
-const submitButton = document.querySelector('#answerSubmit')
-const result = document.querySelector('#result')
+const flashCard = document.querySelector('#flashCard')
 
-query.addEventListener("submit", getCountries)
-question.addEventListener('submit', checkAnwser)
+
+query.addEventListener("submit", getCountry)
+
 
 let trueAnswer = undefined
 
 //functions
 
-function createQuestion(data){
-  const countries = data
-  const randomIndex = Math.floor(Math.random()*countries.length)
-  trueAnswer = countries[randomIndex]
+function createFlashCard(data){
 
-  let quest = document.createElement('p')
-  quest.textContent = `What is the flag of ${trueAnswer.name}`
-  options.appendChild(quest)
+const country = document.createElement('h1')
+const reg = document.createElement('p')
+const curr = document.createElement('p')
 
-  for(country in countries){
-    let ID = countries[country].ID
-    let type = 'flags'
-    console.log(ID, type)
-    fetchImage(type, ID)
-  }
-  let button = document.createElement('input')
-  button.type = `submit`
-  submitButton.appendChild(button)
+country.textContent = `${data.name}`
+reg.textContent = `Region: ${data.region}`
+curr.textContent = `Currency: ${data.currency}`
 
+flashCard.appendChild(country)
+flashCard.appendChild(reg)
+flashCard.appendChild(curr)
 
-}
-
-function addImage(url, ID){
-  let input = document.createElement('input')
-  input.type = 'radio'
-  input.id = ID
-  input.value = ID
-  input.name = 'answer'
-  options.appendChild(input)
-
-  let label = document.createElement('label')
-  label.setAttribute('for', ID)
-  options.appendChild(label)
-
-  let img = document.createElement('img')
-  img.src = url
-  label.appendChild(img)
-
-}
-
-
-function getCountries(e){
-  e.preventDefault()
-  options.innerHTML = ""
-  submitButton.innerHTML = ""
-  result.innerHTML = ""
   
 
-  const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "4"];
-  fetchCountries(level, region, numberRequests)
+fetchImage('flags', data.ID)
+fetchImage('maps', data.ID)
 }
 
-function checkAnwser(e){
-  e.preventDefault()
-  result.innerHTML = ""
-  const answer = e.target.answer.value
-  let displayResult = document.createElement('p')
-  if(answer == trueAnswer.ID){
-    displayResult.textContent = 'Right Answer'
-    console.log('right answer')
+function addImage(url, ID, type){
+  let img = document.createElement('img')
+  img.src = url
+  
+  if(type == 'maps'){
+    img.id = `map${ID}`
+    img.width = 1500
   }else{
-    console.log('wrong answer')
-    displayResult.textContent = 'Wrong Answer'
-  }
-  result.appendChild(displayResult)
+    img.id = `flag${ID}`
+    img.width = 150}
+
+  flashCard.appendChild(img)
 }
+
+
+function getCountry(e){
+  e.preventDefault()
+  flashCard.innerHTML = ""
+
+  const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "1"];
+  fetchCountry(level, region, numberRequests)
+}
+
 
 
 //requests
-async function fetchCountries(level, region, numberRequests) {
+async function fetchCountry(level, region, numberRequests) {
   
   //Make sure to add your deployed API URL in this fetch
-  try {
+  // try {
     const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
     if(response.ok){
-        const data = await  response.json()
-        createQuestion(data)
+        const data = await response.json()
+        console.log('aaa', data[0])
+        createFlashCard(data[0])
     }
     else {throw 'Error status: ' + resp.status}
   }
-  catch(e){console.log('error at  catch')}
-}
+//   catch(e){console.log('error at  catch')}
+// }
 
 
 async function fetchImage(type, ID) {
@@ -104,7 +80,7 @@ async function fetchImage(type, ID) {
       const imageBlob = await response.blob()
       const imageURL = URL.createObjectURL(imageBlob)
       console.log(imageURL)
-      addImage(imageURL, ID)
+      addImage(imageURL, ID, type)
     }
     else {throw 'Error status: ' + res.status}
   }

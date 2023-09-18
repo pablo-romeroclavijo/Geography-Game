@@ -17,7 +17,7 @@ function createQuestion(data){
   trueAnswer = countries[randomIndex]
 
   let quest = document.createElement('p')
-  quest.textContent = `What is the flag of ${trueAnswer.name}`
+  quest.textContent = `What is the flag of ${trueAnswer.name}?`
   options.appendChild(quest)
 
   for(country in countries){
@@ -51,7 +51,6 @@ function addImage(url, ID){
   label.appendChild(img)
 
 }
-
 
 function getCountries(e){
   e.preventDefault()

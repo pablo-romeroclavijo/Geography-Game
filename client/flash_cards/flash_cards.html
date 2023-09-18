@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flag Quiz Game</title>
-    <script defer src="./flag_quiz.js" ></script>
+    <script defer src="./flash_cards.js" ></script>
 </head>
 <body>
     <section>
@@ -12,6 +12,7 @@
             <h3>Select from Level and Region</h3>
                 <label for="region">Region:</label>
                 <select id="region" name="region">
+                    <option value = 'all'>All</option>
                     <option value="EU">Europa</option>
                     <option value="AF">Africa</option>
                     <option value="AM">America</option>
@@ -23,6 +24,7 @@
                 
                 <label for="level">Level:</label>
                 <select id="level" name="level">
+                    <option value = 'all'>All</option>
                     <option value="E">Easy</option>
                     <option value="M">Medium</option>
                     <option value="H">Hard</option>
@@ -34,20 +36,13 @@
         </form>
     </section>
 
-    <section>
-        <form id = "question">
-   
-            <div id = 'options'>
-            </div>
-            <div id="answerSubmit">
+    <section >
+        <box id="flashCard">
 
-            </div>
-            
-        </form>
+        </box>
+       
     </section>
-    <section id = "result">
-        
-    </section>
+
     
 </body>
 </html>
