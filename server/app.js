@@ -26,17 +26,17 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
     const region = req.body.region
     const numberRequests = Number(req.body.numberRequests)
 
-    const filteredDB = countryDB.filter(x => (x.level == level && x.regiomn == region) )
+    const filteredDB = countryDB.filter(x => (x.level == level && x.region == region) )
 
     let countryIndexes = []
-    for(i==0; i < numberRequests; pass){
+    for(i=0; i < numberRequests; i){
         randomIndex = Math.floor(Math.random()*filteredDB.length)
         if(!(randomIndex in countryIndexes)){
             countryIndexes.push(randomIndex)
             i++
         }        
     }
-    
+
     let countries = []
     for(i in countryIndexes){
         let country = countryIndexes[i]
@@ -50,9 +50,14 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
     scoreBoard.push({username, score})
-    scoreBoard.sort()
+    res.status(201).send('Saved')
 })
+
+// app.get('getScoreBoard', (req, res) => {
+
+// })
 
 
 // functions
 
+module.exports = app
