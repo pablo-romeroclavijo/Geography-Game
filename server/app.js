@@ -35,14 +35,11 @@ app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"leve
         const numberRequests = Number(req.params.numberRequests)
         let filteredDB = undefined
 
-        console.log(level == "all", region == "all")
 
         if(level == "all" && region !=="all"){filteredDB = countryDB.filter(x => (x.region == region))}
         else if(region == "all" && level !== "all"){filteredDB = countryDB.filter(x => (x.level == level))}
         else if(level == "all" && region == "all"){filteredDB = countryDB}
         else {filteredDB = countryDB.filter(x => (x.level == level && x.region == region))}
-
-        console.log(filteredDB)
 
         if(filteredDB.length == 0){
             console.log('No records found')
@@ -68,8 +65,6 @@ app.get('/countries/:level&:region&:numberRequests', (req, res) => {    //{"leve
                 countries.push(filteredDB[country])
             }
 
-
-            console.log('Response: '+ countries)
             res.status(200).send(JSON.stringify(countries))
         }
     }
