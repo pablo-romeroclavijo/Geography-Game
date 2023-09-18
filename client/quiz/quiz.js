@@ -1,32 +1,48 @@
-const qmap = document.querySelector("#map")
 
+const qmap = document.querySelector("#questions")
+const setting = document.querySelector("#setting")
 
-  showmap()
+setting.addEventListener("submit",getCountries)
 
-    function showmap(){
-      const image = document.createElement("img")
-      image.src = `../../server/assets/Maps/m25.png`
-      image.width = 1500
-      qmap.appendChild(image)
-    }
-    
-    
-createNewOptions()
+let id
+let countries = {}
 
-function genarateMap(question,answer){
-    
-
+function startQuiz(q){
+  q.forEach(element => {
+    console.log(element)
+    countries[element.name] = element.name
+    id = element.ID
+  });
+  console.log(id)
+  console.log(countries)
+  showmap(id)
 }
 
 
+
+
+function showmap(id){
+  const image = document.createElement("img")
+  image.src = `../../server/assets/Maps/m${id}.png`
+  image.width = 1500
+  qmap.appendChild(image)
+}
+function getCountries(e){
+  e.preventDefault()
+  const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "4"];
+  fetchCountries(level, region, numberRequests)
+
+}
+    
+
+
 async function fetchCountries(level, region, numberRequests) {
-  
   //Make sure to add your deployed API URL in this fetch
   try {
     const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
     if(response.ok){
-        const data = await  response.json()
-        console.log(data)
+        const data = await response.json()
+        startQuiz(data)
     }
     else {throw 'Error status: ' + resp.status}
   }
