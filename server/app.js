@@ -87,15 +87,18 @@ app.get('/image/:type/:ID', (req, res)=>{
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
+    if (!username) {
+        return res.status(400).json({ message: 'Username is required' });
+    }
     scoreBoard.push({username, score})
     res.status(201).send('Saved')
 })
 
 app.get('/scoreBoard', (req, res) => {
-    // const scoreBoard = req.body
     const sortedScoreBoard = scoreBoard.sort((a, b) => b.score - a.score)
-    console.log(scoreBoard)
-    res.status(200).send(sortedScoreBoard)
+    const topScore = sortedScoreBoard.slice(0, 10)
+    console.log(topScore)
+    res.status(200).send(JSON.stringify(topScore))
 })
 
  
