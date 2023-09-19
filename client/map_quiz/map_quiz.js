@@ -5,6 +5,7 @@ const submit = document.querySelector("#answerSubmit")
 const worldMap = document.querySelector("#worldMap")
 const optionSelect = document.querySelector("#options")
 const form = document.querySelector("#quiz")
+const result = document.querySelector("#result")
 
 setting.addEventListener("submit",getCountries)
 form.addEventListener("submit",checkAnwser)
@@ -56,9 +57,9 @@ function checkAnwser(e){
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
   submit.innerHTML = ""
-  if(number_of_qestions < 10){
-  number_of_qestions++
-  console.log("answerid " + id)
+  
+  showScore()
+
   if(id == passedAnswer){
     console.log("right answer")
     score ++
@@ -66,14 +67,25 @@ function checkAnwser(e){
   }else{
     console.log("wrong answer")
   }
+  if(number_of_qestions < 2){
+  number_of_qestions++
+  console.log("answerid " + id)
   console.log(number_of_qestions)
   fetchCountries(level, region, numberRequests)
   }else{
+    showScore(score)
     console.log("done")
     console.log(score)
   }
- 
-  
+}
+
+function showScore(){
+  console.log("result")
+  let showResult = document.createAttribute("p")
+  console.log("result")
+  showResult.textContent = `Final result:`
+  console.log(showResult.textContent)
+  result.appendChild(showResult)
 }
 
 function addImage(url){
