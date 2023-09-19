@@ -59,6 +59,9 @@ app.get('/countries', (req, res) => {    //{"level": "M", "region": "AS", "numbe
 
 app.post('/updateScore', (req, res) =>{
     const {username, score} = req.body
+    if (!username) {
+        return res.status(400).json({ message: 'Username is required' });
+    }
     scoreBoard.push({username, score})
     res.status(201).send('Saved')
 })
