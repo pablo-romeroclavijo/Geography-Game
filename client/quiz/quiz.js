@@ -1,60 +1,92 @@
-const qmap = document.querySelector("#map")
+
+const question = document.querySelector("#questions")
+const setting = document.querySelector("#setting")
+const submit = document.querySelector("#answerSubmit")
+const worldMap = document.querySelector("#worldMap")
+const optionSelect = document.querySelector("#options")
+
+setting.addEventListener("submit",getCountries)
+
+let id
+let countries = {}
 
 
-  showmap()
-
-    function showmap(){
-      const image = document.createElement("img")
-      image.src = `../../server/assets/Maps/m25.png`
-      image.width = 1500
-      qmap.appendChild(image)
-    }
-    
-    
-createNewOptions()
-
-function genarateMap(question,answer){
-    
-
+function startQuiz(q){
+  const randomIndex = Math.floor(Math.random()*q.length)
+  console.log(randomIndex)
+  let id;
+  id = q[randomIndex].ID
+  console.log(id)
+  fetchImage("maps",id)
+  q.forEach(element => {
+    console.log(element)
+    generateOption(element.name,element.ID)
+  })
 }
-/*
-fetch all the countries
-// 
+function generateOption(name,id){
+  console.log(name)
+  let option1 = document.createElement("input")
+  option1.type = "radio"
+  option1.id = id
+  option1.name = name
+  console.log(option1)
+  optionSelect.appendChild(option1)
+ 
+  let label = document.createElement('label')
+  console.log(option1)
+  label.setAttribute('for', option1.id)
+  label.textContent = name
+  optionSelect.appendChild(label)
+}
 
+function addImage(url){
+  let map = document.createElement("img")
+  map.src = url
+  map.width = 1500
+  worldMap.appendChild(map)
+}
 
-
-
-*/
-async function createNewOptions(){
+function getCountries(e){
+  e.preventDefault()
+  worldMap.innerHTML = ""
+  optionSelect.innerHTML = ""
+  submit.innerHTML = ""
   
-  const data = {level: "M", region: "AS", numberRequests: "4"};
-  const options = {
-      method: "POST",
-      Headers: {
-          "Content-Type”": "application/json"
-      },
-      body: JSON.stringify(data)
-  }
-  //Make sure to add your deployed API URL in this fetch
-  const response = await fetch(`https://localhost/3000//countries`, options);
-  console.log(response)
+
+  const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "4"];
+  fetchCountries(level, region, numberRequests)
+
 }
 
-/*
-async function fetchCountries(){     // added fetch function to get the reponse from the api and using await/async to make the webiste smooth 
-    try{
-      const country = await fetch(`http://localhost:3000/countries`);
-      if(country.ok){
-        const question = await country.json();
-        showCountry(question)
-      }else{
-        throw "Something has gone wrong with the API request"
-      }
-    }catch(e){
-      console.log(e)
-      
+async function fetchCountries(level, region, numberRequests) {
+  //Make sure to add your deployed API URL in this fetch
+  try {
+    const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
+    if(response.ok){
+        const data = await response.json()
+        startQuiz(data)
     }
-
+    else {throw 'Error status: ' + resp.status}
   }
-*/
+  catch(e){console.log('error at  catch')}
+}
+
+async function fetchImage(type,ID) {
+  
+  //Make sure to add your deployed API URL in this fetch
+   try {
+    const response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
+    if(response.ok){
+      console.log("ok")
+      const mapBolb = await response.blob()
+      const imageURL = URL.createObjectURL(mapBolb)
+      console.log(imageURL)
+      addImage(imageURL)
+    }
+    else {throw 'Error status: ' + response.status}
+  }
+  catch(e){console.log('error at  catch')}
+}
+
+
   
