@@ -8,9 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "jest": "^29.7.0",
     "watchify": "^4.0.0"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
