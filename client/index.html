@@ -6,32 +6,80 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/index.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
         <script defer src="./bundle.js" ></script>
     </head>
 
-    <body>
-        <section id="learningTools">
-            <h2>Learning tools</h2>
-            <ul>
-                <li> <a href = './flash_cards/flash_cards.html'>Flash Cards</a></li>
-                <li> <a href = '#'>Search country</a></li>
+    <body style = 'background-color: grey'>
+        <nav class="navbar navbar-expand bg-body-secondary" data-bs-theme="dark" >
+            <div class="container-fluid justify-content-start m-3">
+                <img class = 'align-middle' src = "./assets/Logo_white.svg" width = '300px' >   </svg>
+              <div class='navbar navbar-brand position-relative start-0'>
+                <a class="nav-link fs-3" href="index.html">Home</a>
+              </div>
+    
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Learning Resources
+              </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="./flash_cards/flash_cards.html">Flash Card</a></li>
+                  <li><a class="dropdown-item" href="#">Search Country</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Games
+                </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item " href="flag_quizz/flag_quiz.html">Flag Quizz</a></li>
+                    <li><a class="dropdown-item" href="quiz/quiz.html">Map Quizz</a></li>
+                    <li><a class="dropdown-item" href="#">Memory card game</a></li>
+                  </ul>
+                </li>
             </ul>
+        </nav>
+    
+        <section id="introMessage" class="d-block m-auto w-75" style="top: 27%;">
+            <div class="flex-row">
+                <h2 class="flex-row text-white bg-dark w-50 text-center rounded-5 p-2 m-auto mt-2">Welcome to Geo-App</h2>
+                <p class="flex-row e  rounded-3 text-black p-4" >
+                    Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
+                </p>
+            </div>
         </section>
-
-        <section id = 'games'>
-            <h2>Games</h2>
-            <ul>
-                <li> <a href = './flag_quizz/flag_quiz.html'>Flag Quiz</a></li>
-                <li> <a href = './quiz/quiz.html'>Map country</a></li>
-                <li> <a href = '#'>Memory cards</a></li>
-            </ul>
-        </section>
-        <br><br><br>
-        <section id="scoreBoard">
-            <h2>Scoreboard </h2>
-            <p>Scoreboard goes here</p>
-        </section>
+    
+        <section id="resources" style="top: 60%; width:90%">
+            <div class="d-flex flex-row justify-content-center" style="margin: 20px; width: 85%;">
+                <div class="m-3 mt-0" style="display: flexbox; width: 25%" id="learningResouces">
+                    <h2 class="text-white bg-dark w-25 text-center rounded-5 p-1 w-100" >Learning resources</h2>
+                    
+                        <ul class="bg-dark-subtle  rounded-3 text-black p-4">
+                            <li> <a href = 'flash_cards/flash_cards.html'>Flash Cards</a></li>
+                            <li> <a href = '#'>Search country</a></li>
+                        </ul>
+               
+                </div>
+                <div class= "m-3 mt-0"style = 'display: flexbox; width: 25%;'; id="Games">
+                    <h2 class="text-white bg-dark w-100 text-center rounded-5 p-1" >Games</h2>
+                    
+                        <ul class="bg-dark-subtle  rounded-3 text-black p-4">
+                            <li> <a href = 'flag_quizz/flag_quiz.html'>Flag Quiz</a></li>
+                            <li> <a href = 'quiz/quiz.html'>Map Quiz</a></li>
+                            <li> <a href = '#'>Memory cards</a></li>
+                        </ul>
         
-
+                </div>
+                <div class="m-3 mt-0" style="display: flexbox; width: 50%" id="Scoreboard">
+                    <h2 class="text-white bg-dark w-25 text-center rounded-5 p-1 w-100" >Scoreboard</h2>
+                    <p class="bg-dark-subtle  rounded-3 text-black p-4"></p>
+                </div>
+        
+            </div>
+        </section>
+    
     </body>
-</html>
+    </html>
