@@ -1,11 +1,20 @@
 {
   "name": "geography-game",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
+=======
+>>>>>>> 9b3339023d4a255dd1a0773ed45335334561ebd7
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+<<<<<<< HEAD
   "license": "ISC"
+=======
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+>>>>>>> 9b3339023d4a255dd1a0773ed45335334561ebd7
 }

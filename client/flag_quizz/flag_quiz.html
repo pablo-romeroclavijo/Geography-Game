@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
-    <script src="quiz.js" defer></script>
+    <title>Flag Quiz Game</title>
+    <script defer src="./flag_quiz.js" ></script>
 </head>
 <body>
     <section>
-        <form id="setting">
+        <form id="level">
             <h3>Select from Level and Region</h3>
                 <label for="region">Region:</label>
                 <select id="region" name="region">
+                    <option value = 'all'>All</option>
                     <option value="EU">Europa</option>
                     <option value="AF">Africa</option>
                     <option value="AM">America</option>
@@ -23,33 +24,32 @@
                 
                 <label for="level">Level:</label>
                 <select id="level" name="level">
+                    <option value = 'all'>All</option>
                     <option value="E">Easy</option>
                     <option value="M">Medium</option>
                     <option value="H">Hard</option>
                 </select>
-                
+    
                 <br>
                 
                 <input type="submit" value="Submit">
         </form>
     </section>
 
-    <section >
-        <h2>What is the name of the highlighted country in the below picture?</h2>    
-            <form id = "quiz">   
-                <div id = "options">
+    <section>
+        <form id = "question">
+   
+            <div id = 'options'>
+            </div>
+            <div id="answerSubmit">
 
-                </div>
-                <div id ="worldMap">
-
-                </div>
-                <div id="answerSubmit">
-                    
-                </div>
-                
-            </form>
-         
-           
+            </div>
+            
+        </form>
     </section>
+    <section id = "result">
+        
+    </section>
+    
 </body>
 </html>
