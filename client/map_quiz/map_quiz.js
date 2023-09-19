@@ -4,31 +4,42 @@ const setting = document.querySelector("#setting")
 const submit = document.querySelector("#answerSubmit")
 const worldMap = document.querySelector("#worldMap")
 const optionSelect = document.querySelector("#options")
+const form = document.querySelector("#quiz")
+const result = document.querySelector("#result")
 
 setting.addEventListener("submit",getCountries)
+form.addEventListener("submit",checkAnwser)
 
 let id
 let countries = {}
-
+let level;
+let region;
+let numberRequests;
+let number_of_qestions = 0;
+let score = 0;
 
 function startQuiz(q){
   const randomIndex = Math.floor(Math.random()*q.length)
   console.log(randomIndex)
-  let id;
   id = q[randomIndex].ID
-  console.log(id)
+  console.log("answerindex" + id)
   fetchImage("maps",id)
   q.forEach(element => {
     console.log(element)
     generateOption(element.name,element.ID)
   })
+  let button = document.createElement('input')
+  button.type = "submit"
+  submit.appendChild(button)
 }
 function generateOption(name,id){
   console.log(name)
   let option1 = document.createElement("input")
   option1.type = "radio"
   option1.id = id
-  option1.name = name
+  option1.value = id
+  console.log("value " + option1.value)
+  option1.name = "answer"
   console.log(option1)
   optionSelect.appendChild(option1)
  
@@ -37,6 +48,44 @@ function generateOption(name,id){
   label.setAttribute('for', option1.id)
   label.textContent = name
   optionSelect.appendChild(label)
+}
+
+function checkAnwser(e){
+  e.preventDefault()
+  console.log("next clicked")
+  let passedAnswer = e.target.answer.value
+  worldMap.innerHTML = ""
+  optionSelect.innerHTML = ""
+  submit.innerHTML = ""
+  
+  showScore()
+
+  if(id == passedAnswer){
+    console.log("right answer")
+    score ++
+    console.log("score" + score)
+  }else{
+    console.log("wrong answer")
+  }
+  if(number_of_qestions < 2){
+  number_of_qestions++
+  console.log("answerid " + id)
+  console.log(number_of_qestions)
+  fetchCountries(level, region, numberRequests)
+  }else{
+    showScore(score)
+    console.log("done")
+    console.log(score)
+  }
+}
+
+function showScore(){
+  console.log("result")
+  let showResult = document.createAttribute("p")
+  console.log("result")
+  showResult.textContent = `Final result:`
+  console.log(showResult.textContent)
+  result.appendChild(showResult)
 }
 
 function addImage(url){
@@ -48,14 +97,16 @@ function addImage(url){
 
 function getCountries(e){
   e.preventDefault()
+  console.log("setting clicked")
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
   submit.innerHTML = ""
   
-
-  const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "4"];
+  level = e.target.level.value
+  region = e.target.region.value
+  numberRequests = "4"
+  
   fetchCountries(level, region, numberRequests)
-
 }
 
 async function fetchCountries(level, region, numberRequests) {

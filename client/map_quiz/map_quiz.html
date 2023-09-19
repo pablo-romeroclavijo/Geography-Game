@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
-    <script src="quiz.js" defer></script>
+    <script src="map_quiz.js" defer></script>
 </head>
 <body>
     <section>
         <form id="setting">
             <h3>Select from Level and Region</h3>
+            <fieldset>
                 <label for="region">Region:</label>
                 <select id="region" name="region">
                     <option value="EU">Europa</option>
@@ -29,6 +30,8 @@
                 </select>
                 
                 <br>
+            </fieldset>
+               
                 
                 <input type="submit" value="Submit">
         </form>
@@ -47,9 +50,10 @@
                     
                 </div>
                 
-            </form>
-         
-           
+            </form>    
+    </section>
+    <section id = "result">
+
     </section>
 </body>
 </html>
