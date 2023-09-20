@@ -1,15 +1,73 @@
-
 [
-    {"score" : 4},
-    {"score" : 9},
-    {"score" : 7},
-    {"score" : 5},
-    {"score" : 10},
-    {"score" : 2},
-    {"score" : 6},
-    {"score" : 20},
-    {"score" : 10},
-    {"score" : 3},
-    {"score" : 1},
-    {"score" : 8}
+  {
+    "username": "user1",
+    "score": 42,
+    "difficulty": "M"
+  },
+  {
+    "username": "user2",
+    "score": 65,
+    "difficulty": "H"
+  },
+  {
+    "username": "user3",
+    "score": 23,
+    "difficulty": "E"
+  },
+  {
+    "username": "user4",
+    "score": 78,
+    "difficulty": "M"
+  },
+  {
+    "username": "user5",
+    "score": 56,
+    "difficulty": "E"
+  },
+  {
+    "username": "user6",
+    "score": 91,
+    "difficulty": "M"
+  },
+  {
+    "username": "user7",
+    "score": 32,
+    "difficulty": "E"
+  },
+  {
+    "username": "user8",
+    "score": 75,
+    "difficulty": "H"
+  },
+  {
+    "username": "user9",
+    "score": 49,
+    "difficulty": "E"
+  },
+  {
+    "username": "user10",
+    "score": 88,
+    "difficulty": "E"
+  },
+  {
+    "username": "user11",
+    "score": 57,
+    "difficulty": "M"
+  },
+  {
+    "username": "user12",
+    "score": 69,
+    "difficulty": "H"
+  },
+  {
+    "username": "user13",
+    "score": 40,
+    "difficulty": "H"
+  },
+  {
+    "username": "user14",
+    "score": 82,
+    "difficulty": "M"
+  },
+  {}
 ]
