@@ -88,29 +88,12 @@ app.get('/image/:type/:ID', (req, res)=>{
 
 
 app.post('/updateScore', (req, res) => {
-    // const user = req.body.value;
-    // const userName = user.username;
-    // const scorex = user.score;
-    // const difficultyx = user.difficulty;
-    const { username, score, difficulty } = req.body
-    // Assuming the username is unique, check if the user already exists in the array
-    const existingUserIndex = scoreBoard.findIndex(item => item.username === userName);
+    const user = req.body;   
+    scoreBoard.push(req.body)
+    //console.log(scoreBoard)
 
-    if (existingUserIndex !== -1) {
-        // If the user already exists, update their score and difficulty
-        scoreBoard[existingUserIndex].score = scorex;
-        scoreBoard[existingUserIndex].difficulty = difficultyx;
-    } else {
-        // If the user doesn't exist, add them to the array
-        scoreBoard.push({
-            "username": userName,
-            "score": scorex,
-            "difficulty": difficultyx
-        });
-    }
-
-    // Save the updated scoreBoard back to the JSON file
-    fs.writeFileSync('./assets/scoreBoard.json', JSON.stringify(scoreBoard, null, 2));
+    // // Save the updated scoreBoard back to the JSON file
+    // fs.writeFileSync('./assets/scoreBoard.json', JSON.stringify(scoreBoard, null, 2));
 
     // Respond with a success message or updated data
     res.status(200).json({ message: 'Score updated successfully', scores: scoreBoard });
