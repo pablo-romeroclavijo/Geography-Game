@@ -1,5 +1,7 @@
 const query = document.querySelector("#level")
-const flashCard = document.querySelector('#flashCard')
+const map = document.querySelector('#map')
+const info = document.querySelector('#info')
+
 
 
 query.addEventListener("submit", getCountry)
@@ -16,12 +18,22 @@ const reg = document.createElement('p')
 const curr = document.createElement('p')
 
 country.textContent = `${data.name}`
-reg.textContent = `Region: ${data.region}`
-curr.textContent = `Currency: ${data.currency}`
+country.classList.add('p-1')
+info.appendChild(country)
 
-flashCard.appendChild(country)
-flashCard.appendChild(reg)
-flashCard.appendChild(curr)
+const block = document.createElement('div')
+block.classList.add('d-flex', "justify-content-center")
+block.id = 'block'
+info.appendChild(block)
+
+reg.textContent = `Region: ${data.region}`
+reg.classList.add('d-inline-flex', 'fs-2', "p-3")
+curr.textContent = `Currency: ${data.currency}`
+curr.classList.add('d-inline-flex', 'fs-2', "p-3")
+
+
+block.appendChild(reg)
+block.appendChild(curr)
 
   
 
@@ -30,23 +42,28 @@ fetchImage('maps', data.ID)
 }
 
 function addImage(url, ID, type){
+  const block =document.querySelector('#block')
   let img = document.createElement('img')
   img.src = url
   
   if(type == 'maps'){
     img.id = `map${ID}`
     img.width = 1500
+    img.classList.add('m-3')
+    map.appendChild(img)
   }else{
-    img.id = `flag${ID}`
-    img.width = 150}
 
-  flashCard.appendChild(img)
+    img.id = `flag${ID}`
+    img.width = 150
+    img.classList.add('p-3')
+    block.appendChild(img)}
 }
 
 
 function getCountry(e){
   e.preventDefault()
-  flashCard.innerHTML = ""
+  info.innerHTML = ""
+  map.innerHTML = ""
 
   const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "1"];
   fetchCountry(level, region, numberRequests)
