@@ -2,17 +2,20 @@
   {
     "username": "user1",
     "score": 42,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flag"
   },
   {
     "username": "user2",
     "score": 65,
-    "difficulty": "H"
+    "difficulty": "H",
+    "quiz": "flag"
   },
   {
     "username": "user3",
     "score": 23,
-    "difficulty": "E"
+    "difficulty": "E",
+    "quiz": "flag"
   },
   {
     "username": "user4",
