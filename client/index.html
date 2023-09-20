@@ -9,7 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer src="./bundle.js" ></script>
+        <script defer src="index.js" ></script>
     </head>
 
     <body style = 'background-color: grey'>
@@ -74,9 +74,25 @@
                         </ul>
         
                 </div>
-                <div class="m-3 mt-0" style="display: flexbox; width: 50%" id="Scoreboard">
+                <div class="m-3 mt-0" style="display: flexbox; width: 50%" >
                     <h2 class="text-white bg-dark w-25 text-center rounded-5 p-1 w-100" >Scoreboard</h2>
-                    <p class="bg-dark-subtle  rounded-3 text-black p-4"></p>
+                    <p class="bg-dark-subtle  rounded-3 text-black p-4" id="Scoreboard"></p>
+                    <div id="score-list">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Username</th>
+                              <th scope="col">Score</th>
+                              <th scope="col">Difficulty</th>
+                              <th scope="col">Game</th>
+                            </tr>
+                          </thead>
+                          <tbody id="tableBody">
+              
+                          </tbody>
+                        </table>
+                  </div>
                 </div>
         
             </div>
