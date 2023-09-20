@@ -40,20 +40,20 @@ function createScoreTable(data) {
         let record = data[i]
 
         let tr = document.createElement('tr')
+        tr.id = `row ${i}`
         tableBody.appendChild(tr)
 
-        let th = document.createElement('th')
-        th.id = `row ${i}`
-        tr.appendChild(th)
-
-        const columns =['username', 'score', 'difficulty', 'game']
+        const columns =['username', 'score', 'difficulty', 'quiz']
+        let td = document.createElement('td')
+            td.textContent = `${i+1}`
+            tr.appendChild(td)
 
         for(let j = 0; j < columns.length; j++){
             let ele = columns[j]
             console.log(j, record[ele])
             let td = document.createElement('td')
             td.textContent = `${record[ele]}`
-            td.appendChild(th)
+            tr.appendChild(td)
         }
 
 
