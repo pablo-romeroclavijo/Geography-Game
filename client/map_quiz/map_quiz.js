@@ -7,8 +7,9 @@ const optionSelect = document.querySelector("#options")
 const form = document.querySelector("#quiz")
 const result = document.querySelector("#result")
 
+console.log(result)
 setting.addEventListener("submit",getCountries)
-form.addEventListener("submit",checkAnwser)
+form.addEventListener("submit",nextq)
 
 let id
 let countries = {}
@@ -32,6 +33,8 @@ function startQuiz(q){
   button.type = "submit"
   submit.appendChild(button)
 }
+
+
 function generateOption(name,id){
   console.log(name)
   let option1 = document.createElement("input")
@@ -50,41 +53,45 @@ function generateOption(name,id){
   optionSelect.appendChild(label)
 }
 
-function checkAnwser(e){
+function nextq(e){
   e.preventDefault()
   console.log("next clicked")
   let passedAnswer = e.target.answer.value
-  worldMap.innerHTML = ""
-  optionSelect.innerHTML = ""
-  submit.innerHTML = ""
-  
-  showScore()
+  console.log("answer" + passedAnswer)
+  if(passedAnswer.length == 0){
+    console.log("please select an asnwer")
+    alert("Please Select and answer")
+  }else{
+    checkAnwser(passedAnswer)
+    if(number_of_qestions < 2){
+    number_of_qestions++
+    nextcountries()
+    console.log("answerid " + id)
+    }else{
+      console.log("done")
+      console.log(score)
+      showScore()
+    }
+  }
+}
 
-  if(id == passedAnswer){
-    console.log("right answer")
-    score ++
+function checkAnwser(answer){
+  if(id == answer){
+    score++
     console.log("score" + score)
   }else{
     console.log("wrong answer")
   }
-  if(number_of_qestions < 2){
-  number_of_qestions++
-  console.log("answerid " + id)
-  console.log(number_of_qestions)
-  fetchCountries(level, region, numberRequests)
-  }else{
-    showScore(score)
-    console.log("done")
-    console.log(score)
-  }
 }
 
 function showScore(){
+  worldMap.innerHTML = ""
+  optionSelect.innerHTML = ""
+  submit.innerHTML = ""
   console.log("result")
   let showResult = document.createAttribute("p")
   console.log("result")
   showResult.textContent = `Final result:`
-  console.log(showResult.textContent)
   result.appendChild(showResult)
 }
 
@@ -93,6 +100,12 @@ function addImage(url){
   map.src = url
   map.width = 1500
   worldMap.appendChild(map)
+}
+function nextcountries(){
+  worldMap.innerHTML = ""
+  optionSelect.innerHTML = ""
+  submit.innerHTML = ""
+  fetchCountries(level, region, numberRequests)
 }
 
 function getCountries(e){
