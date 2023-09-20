@@ -85,36 +85,47 @@ app.get('/image/:type/:ID', (req, res)=>{
     res.send(img)
 })
 
-
-
 app.post('/updateScore', (req, res) => {
-    // const user = req.body.value;
-    // const userName = user.username;
-    // const scorex = user.score;
-    // const difficultyx = user.difficulty;
-    const { username, score, difficulty } = req.body
-    // Assuming the username is unique, check if the user already exists in the array
-    const existingUserIndex = scoreBoard.findIndex(item => item.username === userName);
-
-    if (existingUserIndex !== -1) {
-        // If the user already exists, update their score and difficulty
-        scoreBoard[existingUserIndex].score = scorex;
-        scoreBoard[existingUserIndex].difficulty = difficultyx;
-    } else {
-        // If the user doesn't exist, add them to the array
-        scoreBoard.push({
-            "username": userName,
-            "score": scorex,
-            "difficulty": difficultyx
-        });
-    }
-
-    // Save the updated scoreBoard back to the JSON file
-    fs.writeFileSync('./assets/scoreBoard.json', JSON.stringify(scoreBoard, null, 2));
-
-    // Respond with a success message or updated data
+    const user = req.body;
+    const username = user.username;
+    const score = user.score;
+    const difficulty = user.difficulty;
+    const quiz = user.quiz
+    scoreBoard.push(user)
+    console.log(user)
+    console.log(scoreBoard)
     res.status(200).json({ message: 'Score updated successfully', scores: scoreBoard });
-});
+
+})
+
+// app.post('/updateScore', (req, res) => {
+//     const user = req.body.value;
+//     const userName = user.username;
+//     const scorex = user.score;
+//     const difficultyx = user.difficulty;
+
+//     // Assuming the username is unique, check if the user already exists in the array
+//     const existingUserIndex = scoreBoard.findIndex(item => item.username === userName);
+
+//     if (existingUserIndex !== -1) {
+//         // If the user already exists, update their score and difficulty
+//         scoreBoard[existingUserIndex].score = scorex;
+//         scoreBoard[existingUserIndex].difficulty = difficultyx;
+//     } else {
+//         // If the user doesn't exist, add them to the array
+//         scoreBoard.push({
+//             "username": username,
+//             "score": score,
+//             "difficulty": difficulty
+//         });
+//     }
+
+//     // Save the updated scoreBoard back to the JSON file
+//     fs.writeFileSync('./assets/scoreBoard.json', JSON.stringify(scoreBoard, null, 2));
+
+//     // Respond with a success message or updated data
+//     res.status(200).json({ message: 'Score updated successfully', scores: scoreBoard });
+// });
 
 
 

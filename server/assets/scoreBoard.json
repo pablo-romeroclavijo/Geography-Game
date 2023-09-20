@@ -2,12 +2,14 @@
   {
     "username": "user1",
     "score": 42,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flags"
   },
   {
     "username": "user2",
     "score": 65,
-    "difficulty": "H"
+    "difficulty": "H",
+    "quiz": "flags"
   },
   {
     "username": "user3",
@@ -17,32 +19,38 @@
   {
     "username": "user4",
     "score": 78,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flags"
   },
   {
     "username": "user5",
     "score": 56,
-    "difficulty": "E"
+    "difficulty": "E",
+    "quiz": "flags"
   },
   {
     "username": "user6",
     "score": 91,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flags"
   },
   {
     "username": "user7",
     "score": 32,
-    "difficulty": "E"
+    "difficulty": "E",
+    "quiz": "flags"
   },
   {
     "username": "user8",
     "score": 75,
-    "difficulty": "H"
+    "difficulty": "H",
+    "quiz": "flags"
   },
   {
     "username": "user9",
     "score": 49,
-    "difficulty": "E"
+    "difficulty": "E",
+    "quiz": "flags"
   },
   {
     "username": "user10",
@@ -52,22 +60,25 @@
   {
     "username": "user11",
     "score": 57,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flags"
   },
   {
     "username": "user12",
     "score": 69,
-    "difficulty": "H"
+    "difficulty": "H",
+    "quiz": "flags"
   },
   {
     "username": "user13",
     "score": 40,
-    "difficulty": "H"
+    "difficulty": "H",
+    "quiz": "flags"
   },
   {
     "username": "user14",
     "score": 82,
-    "difficulty": "M"
-  },
-  {}
+    "difficulty": "M",
+    "quiz": "flags"
+  }
 ]
