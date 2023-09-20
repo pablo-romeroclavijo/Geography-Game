@@ -6,23 +6,57 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/index.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
         <script defer src="./bundle.js" ></script>
     </head>
 
-    <body>
-        <section id="learningTools">
-            <h2>Learning tools</h2>
-            <ul>
-                <li> <a href = './flash_cards/flash_cards.html'>Flash Cards</a></li>
-                <li> <a href = '#'>Search country</a></li>
+    <body style = 'background-color: grey'>
+      <nav class="navbar navbar-expand bg-body-secondary" data-bs-theme="dark" >
+        <div class="container-fluid justify-content-start m-3">
+            <img class = 'align-middle' src = "/client/assets/Logo_white.svg" width = '300px' >   </svg>
+          <div class='navbar navbar-brand position-relative start-0'>
+            <a class="nav-link fs-3" href="/client/index.html">Home</a>
+          </div>
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Learning Resources
+          </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item " href="/client/flash_cards/flash_cards.html">Flash Card</a></li>
+              <li><a class="dropdown-item" href="#">Search Country</a></li>
             </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Games
+            </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quizz</a></li>
+                <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quizz</a></li>
+                <li><a class="dropdown-item" href="#">Memory card game</a></li>
+              </ul>
+            </li>
+        </ul>
+    </nav>
+
+        <section id="introMessage" class=" bg-dark-subtle  rounded-3 text-black p-4 m-auto mt-2 w-75" style="top: 27%;">
+            <div class="flex-row">
+                <h2 class="flex-row text-white bg-dark w-50 text-center rounded-5 p-2 m-auto mt-0">Welcome to Geo-App</h2>
+                <p class="flex-row e  rounded-3 text-black p-4" >
+                    Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
+                </p>
+            </div>
         </section>
 
         <section id = 'games'>
             <h2>Games</h2>
             <ul>
                 <li> <a href = './flag_quizz/flag_quiz.html'>Flag Quiz</a></li>
-                <li> <a href = './map_quiz/map_quiz.html'>Map country</a></li>
+                <li> <a href = './quiz/quiz.html'>Map country</a></li>
                 <li> <a href = '#'>Memory cards</a></li>
             </ul>
         </section>
@@ -31,7 +65,6 @@
             <h2>Scoreboard </h2>
             <p>Scoreboard goes here</p>
         </section>
-        
-
+    
     </body>
-</html>
+    </html>

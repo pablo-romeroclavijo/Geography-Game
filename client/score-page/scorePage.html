@@ -4,11 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+<body style = 'background-color: grey'>
+    <nav class="navbar navbar-expand bg-body-secondary" data-bs-theme="dark" >
+        <div class="container-fluid justify-content-start m-3">
+            <img class = 'align-middle' src = "../assets/Logo_white.svg" width = '300px' >   </svg>
+          <div class='navbar navbar-brand position-relative start-0'>
+            <a class="nav-link fs-3" href="/client/index.html">Home</a>
+          </div>
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Learning Resources
+          </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item " href="/client/flash_cards/flash_cards.html">Flash Card</a></li>
+              <li><a class="dropdown-item" href="#">Search Country</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Games
+            </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quizz</a></li>
+                <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quizz</a></li>
+                <li><a class="dropdown-item" href="#">Memory card game</a></li>
+              </ul>
+            </li>
+        </ul>
+    </nav>
+
     <h1>Score Page</h1>
     <div id="score-list">
-        
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Score</th>
+                <th scope="col">Difficulty</th>
+                <th scope="col">Game</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+          </table>
     </div>
 
     <script src="score.js"></script>
