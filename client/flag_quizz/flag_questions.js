@@ -21,7 +21,7 @@ console.log(params)
 
 let trueAnswer = undefined
 let i = 1
-let scores = []
+let score = 0
 
 let numberOfQuestions = Number(params.nQuestions)
 let level = params.level
@@ -29,7 +29,6 @@ let region = params.region
 let username = params.username
 let numberRequests = params.nRequest
 
-console.log(numberOfQuestions)
 
 getCountries()
 
@@ -105,7 +104,6 @@ function addImage(url, ID){
 }
 
 function getCountries(){
-  console.log(scores)
   if(i<numberOfQuestions+1){
     question.innerHTML = ""
     options.innerHTML = ""
@@ -115,11 +113,8 @@ function getCountries(){
     
     fetchCountries(level, region, numberRequests)}
   else{
-    console.log(scores)
-    let scoretext = document.createElement('p')
-    scoretext.textContent =`Yout score is ${scores}`
-    options.appendChild(scoretext)
-
+    console.log('score:',  score)
+    postScore()
 
   }
 }
@@ -142,8 +137,9 @@ function checkAnwser(e){
   
   if(answer == trueAnswer.ID){
     displayResult.textContent = 'Right Answer'
-    scores.push(10)
+    score += 1000
     console.log('right answer')
+    console.log(score)
   }else{
     console.log('wrong answer')
     displayResult.textContent = 'Wrong Answer'
@@ -189,3 +185,29 @@ async function fetchImage(type, ID) {
   }
   // catch(e){console.log('error at  catch')}
 // }
+
+async function postScore(){
+  const data = {
+    'username': username,
+    'score' : score,
+    'difficulty': level,
+    'quiz': 'Flag Quiz'
+  }
+
+  const options = {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)}
+
+    try {
+      const response =  await fetch ('http://localhost:3000/updateScore', options)
+      if(response.ok){
+        console.log('Record created')
+
+        location.href = `/client/score-page/scorePage.html?username=${username}&score=${score}&quiz=FlagQuiz`
+      }else {throw 'Error status: ' + response.status
+    }
+    }catch(e){console.log('error at  catch')}
+}

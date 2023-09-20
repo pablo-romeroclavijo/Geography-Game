@@ -86,14 +86,14 @@ app.get('/image/:type/:ID', (req, res)=>{
 })
 
 app.post('/updateScore', (req, res) => {
-    const user = req.body;
-    const username = user.username;
-    const score = user.score;
-    const difficulty = user.difficulty;
-    const quiz = user.quiz
-    scoreBoard.push(user)
-    console.log(user)
-    console.log(scoreBoard)
+    const user = req.body;   
+    scoreBoard.push(req.body)
+    //console.log(scoreBoard)
+
+    // // Save the updated scoreBoard back to the JSON file
+    // fs.writeFileSync('./assets/scoreBoard.json', JSON.stringify(scoreBoard, null, 2));
+
+    // Respond with a success message or updated data
     res.status(200).json({ message: 'Score updated successfully', scores: scoreBoard });
 
 })
