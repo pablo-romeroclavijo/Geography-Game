@@ -16,7 +16,7 @@
         <img class="logo" src="/client/assets/Logo_v2.png" alt="Your Logo">
         </a>
     </header>
-    <nav class="navbar navbar-expand" >
+    <nav class="navbar navbar-expand justify-content-center" >
 
         <li class="nav-item">
             <a class="nav-link" href="/client/index.html" role="button" aria-expanded="false" style = "font-weight:bold; font-size: 25px;">
@@ -39,8 +39,8 @@
               Games
             </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quizz</a></li>
-                <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quizz</a></li>
+                <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quiz</a></li>
+                <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quiz</a></li>
                 <li><a class="dropdown-item" href="/client/flash_cards/flash_cards.html">Memory card game</a></li>
               </ul>
             </li>
@@ -51,87 +51,89 @@
             </li>
         </ul>
     </nav>
-    <div class="flex-container">
-        <div class="flex-item">
+
+    <div class="flex-container pb-0" style="max-width: 1400px;">
+        <div class="flex-item mb-0 p-3" style="margin-left: 0; margin-right: 0;">
             <h1>Welcome to GeoApp</h1>
-            <p>Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
-                Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
-                Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
-                Lore imposium Lore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposiumLore imposium.
-            </p>
+            <h3 style="padding: 10px; text-align: center;">Welcome to Geography for GCSE’s! Want to test your knowledge? </h3>
+         
+            <h3 style="padding: 10px; text-align: center;"> Think you can beat your friend in our famous quiz? We have all your educational needs right here. </h3>
 
         </div>
 
     </div>
-    <div class="flex-container">
-        <div class="flex-item">
-   
-            <h2>Learning Resources</h2>
 
-                <a href="/client/flash_cards/flash_cards.html">
+    <div class="flex-container" style =' padding-left:0px; padding-right: 0px; max-width: 2000px; ' >
+        <div class="flex-container w-50 flex-fill" style="justify-content: space-between; margin: 0; margin-right: 10px; flex-flow: column;padding: 0; height: 800px">
+            <div class="flex-item w-100 m-0 mb-2">
+                <h2>Learning Resources</h2>
+                    <div style="margin-top:50px; margin-bottom: 50px;">
+                    <a href="/client/flash_cards/flash_cards.html">
+                        <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px;">
+                            <p style="font-size: 20px;margin-bottom: 0">Flash Cards</p>
+                        </div>
+                    </a>
+
+                    <a  href="#">
+                        <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
+                            <p style="font-size: 20px; margin-bottom: 0">Search a Country</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex-item w-100 mb-0">
+                <h2>Games</h2>
+
+                <a href="/client/flag_quizz/flag_quiz.html">
+
                     <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px;">
-                        <p style="font-size: 20px;margin-bottom: 0">Flash Cards</p>
+                        <p style="font-size: 20px;margin-bottom: 0">Flag Quizz</p>
                     </div>
                 </a>
 
+                <a  href="/client/map_quiz/map_quiz.html">
+                    <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
+                        <p style="font-size: 20px; margin-bottom: 0">Map Quizz</p>
+                    </div>
+                </a>
                 <a  href="#">
                     <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
-                        <p style="font-size: 20px; margin-bottom: 0">Search a Country</p>
+                        <p style="font-size: 20px; margin-bottom: 0">Memory Cards</p>
                     </div>
                 </a>
-
-
-        </div>
-        <div class="flex-item">
-            <h2>Games</h2>
-
-            <a href="/client/flag_quizz/flag_quiz.html">
-                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px;">
-                    <p style="font-size: 20px;margin-bottom: 0">Flag Quizz</p>
-                </div>
-            </a>
-
-            <a  href="/client/map_quiz/map_quiz.html">
-                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
-                    <p style="font-size: 20px; margin-bottom: 0">Map Quizz</p>
-                </div>
-            </a>
-            <a  href="#">
-                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
-                    <p style="font-size: 20px; margin-bottom: 0">Memory Cards</p>
-                </div>
-            </a>
-        </div>
+            </div>
 
         </div>
+        <div class="flex-container w-50 p-0 m-0" style="height: 800px ">
+            <div class="flex-item" style="height: 800px; margin-right: 0;">
+                <h2>Scoreboard</h2>
+                <div id="score-list" class="flex-container mt-3 rounded-5" style="width: 90%;">
+                    <table class="table table-striped" style = 'font-size: 25px;width: 100%; --bs-table-striped-bg: #E5ECF4 '>
+                      <thead style="--bs-table-bg: #8A4FFF; --bs-table-accent-bg:: #E5ECF4" >
+                            <tr>
+                              <th style="color: white" scope="col">#</th>
+                              <th style="color: white"scope="col">Username</th>
+                              <th style="color: white"scope="col">Score</th>
+                              <th style="color: white"scope="col">Difficulty</th>
+                              <th style="color: white"scope="col">Game</th>
+                            </tr>
+                          </thead>
+                          <tbody id="tableBody">
+              
+                          </tbody>
+                        </table>
+                  </div>
+            </div>
+        </div>
+    </div>
 
-        <div class="carousel-container">
+        <div class="carousel-container " style="max-width: 2000px;">
             <div class="carousel">
 
             </div>
         </div>
 
-        <div class="flex-container">
-            <div class="flex-item">
-                <h2>Scoreboard</h2>
-                <div id="score-list">
-                    <table class="table table-striped ">
-                        <thead style="--bs-table-bg: #8A4FFF; --bs-table-accent-bg:: #E5ECF4" >
-                            <tr >
-                            <th scope="col">#</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">Score</th>
-                            <th scope="col">Difficulty</th>
-                            <th scope="col">Game</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        
 
 <footer style=" position:fixed; bottom: 0cm; margin-top: 20px;">
         &copy; 2023 GeoApp

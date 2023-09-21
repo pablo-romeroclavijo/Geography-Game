@@ -18,6 +18,8 @@ p{
     margin-bottom: 0;
 }
 
+
+
 a:link,
 a:visited,
 a:hover,
@@ -26,6 +28,7 @@ a:active {
   text-align: center;
   vertical-align: middle;
 }
+
 /* Header */
 header {
     background-color: #8a4fff;
@@ -54,6 +57,7 @@ nav ul {
 nav li {
     display: inline;
     margin: 0 20px;
+
 }
 
 
@@ -119,10 +123,20 @@ footer {
 
 /* table foramting */
 table{
-    border-collapse: collapse
+    border-collapse: collapse;
+    width: 60%
 }
 
-table td{
-    width: 0px;
+td{
+    width: 1px;
     word-wrap: break-word;
+}
+
+table{
+    border-radius: 20px;
+
+}
+
+tr{
+    border: 10px;
 }

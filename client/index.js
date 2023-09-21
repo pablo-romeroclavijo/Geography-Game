@@ -1,7 +1,7 @@
 const tableBody = document.getElementById('tableBody')
 
 fetchScoreBoard()
-generateCarousel(40)
+generateCarousel(500)
 
 
 
