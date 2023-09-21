@@ -41,7 +41,7 @@ function createQuestion(data){
   let quest = document.createElement('h3')
   let number = document.createElement('h2')
 
-  quest.classList.add('p-')
+
   quest.textContent = `What is the flag of ${trueAnswer.name}?`
   number.textContent = `QUESTION ${i} of ${numberOfQuestions}`
 
