@@ -111,8 +111,11 @@ function checkAnwser(answer){
 
 function showScore(){
   worldMap.innerHTML = ""
+  worldMap.style=""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+  optionSelect.innerHTML =""
+  submit.innerHTML= ""
+  submit.style = ""
   question.textContent = ""
   question.textContent = `Final result: ${score}`
   userinput.style.display = "block"
