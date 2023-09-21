@@ -1,3 +1,11 @@
+.flex-container {
+  background-color: white;
+}
+
+.flex-item{
+  text-align-last: center;
+}
+/* radiobutton formations */
 .radio-box {
   display: flex;
   align-items: center;
@@ -36,3 +44,8 @@
   align-items: center;
 }
 
+li{
+  font-size: 25px;
+  padding-left: 20px;
+  
+}
