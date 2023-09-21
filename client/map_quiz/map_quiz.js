@@ -1,25 +1,44 @@
 
-const question = document.querySelector("#questions")
+const question = document.querySelector("#question")
 const setting = document.querySelector("#setting")
 const submit = document.querySelector("#answerSubmit")
 const worldMap = document.querySelector("#worldMap")
 const optionSelect = document.querySelector("#options")
 const form = document.querySelector("#quiz")
-const result = document.querySelector("#result")
+const userinput = document.querySelector("#userinput")
+console.log(userinput)
 
-console.log(result)
+userinput.style.display = "none"
+question.style.display = "none"
 setting.addEventListener("submit",getCountries)
 form.addEventListener("submit",nextq)
+userinput.addEventListener("submit",submituser)
 
 let id
 let countries = {}
 let level;
 let region;
 let numberRequests;
-let number_of_qestions = 0;
-let score = 0;
+let number_of_qestions ;
+let score;
+let userName;
+
+
+function submituser(e){
+  e.preventDefault()
+  console.log("clicked submit user")
+  console.log(userinput)
+  console.log(e.target)
+  userName = e.target.name.value
+  console.log(userName)
+  userinput.style.display = "none"
+  question.style.display = "none"
+  question.textContent = "What is the name of the highlighted country in the below picture?"
+  postScore(userName)
+}
 
 function startQuiz(q){
+  question.style.display = "block"
   const randomIndex = Math.floor(Math.random()*q.length)
   console.log(randomIndex)
   id = q[randomIndex].ID
@@ -88,11 +107,9 @@ function showScore(){
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
   submit.innerHTML = ""
-  console.log("result")
-  let showResult = document.createAttribute("p")
-  console.log("result")
-  showResult.textContent = `Final result:`
-  result.appendChild(showResult)
+  question.textContent = ""
+  question.textContent = `Final result: ${score}`
+  userinput.style.display = "block"
 }
 
 function addImage(url){
@@ -114,14 +131,14 @@ function getCountries(e){
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
   submit.innerHTML = ""
-  
   level = e.target.level.value
   region = e.target.region.value
   numberRequests = "4"
-  
+  score = 0;
+  number_of_qestions = 0;
   fetchCountries(level, region, numberRequests)
 }
-
+ 
 async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch
   try {
@@ -151,6 +168,30 @@ async function fetchImage(type,ID) {
   }
   catch(e){console.log('error at  catch')}
 }
+//posting images
+async function postScore(username){
+  const data = {
+    'username': username,
+    'score' : score,
+    'difficulty': level,
+    'quiz': 'Map Quiz'
+  }
+  console.log(data)
+  const options = {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)}
+    
+    try {
+      const response =  await fetch ('http://localhost:3000/updateScore', options)
+      if(response.ok){
+        console.log('Record created')
 
-
+        location.href = `/client/score-page/scorePage.html?username=${username}&score=${score}&quiz=FlagQuiz`
+      }else {throw 'Error status: ' + response.status
+    }
+    }catch(e){console.log('error at  catch')}
+}
   

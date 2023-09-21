@@ -73,8 +73,6 @@ function createQuestion(data){
   }
   nextQuestion.style.display = "none";
   next.appendChild(nextQuestion)
-
-
 }
 
 function addImage(url, ID){
@@ -119,8 +117,6 @@ function getCountries(){
     let scoretext = document.createElement('p')
     scoretext.textContent =`Yout score is ${scores}`
     options.appendChild(scoretext)
-
-
   }
 }
 
@@ -189,3 +185,4 @@ async function fetchImage(type, ID) {
   }
   // catch(e){console.log('error at  catch')}
 // }
+
