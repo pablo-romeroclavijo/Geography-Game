@@ -26,9 +26,6 @@ let userName;
 
 function submituser(e){
   e.preventDefault()
-  console.log("clicked submit user")
-  console.log(userinput)
-  console.log(e.target)
   userName = e.target.name.value
   console.log(userName)
   userinput.style.display = "none"
@@ -55,8 +52,10 @@ function startQuiz(q){
 
 
 function generateOption(name,id){
+  
   console.log(name)
   let option1 = document.createElement("input")
+  option1.classList.add("option-radio")
   option1.type = "radio"
   option1.id = id
   option1.value = id
@@ -67,6 +66,7 @@ function generateOption(name,id){
  
   let label = document.createElement('label')
   console.log(option1)
+  label.classList.add("label-radio")
   label.setAttribute('for', option1.id)
   label.textContent = name
   optionSelect.appendChild(label)
@@ -78,8 +78,9 @@ function nextq(e){
   let passedAnswer = e.target.answer.value
   console.log("answer" + passedAnswer)
   if(passedAnswer.length == 0){
-    console.log("please select an asnwer")
-    alert("Please Select and answer")
+    
+    alert("Please Select an answer")
+    
   }else{
     checkAnwser(passedAnswer)
     if(number_of_qestions < 10){
