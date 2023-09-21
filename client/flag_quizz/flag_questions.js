@@ -72,8 +72,6 @@ function createQuestion(data){
   }
   nextQuestion.style.display = "none";
   next.appendChild(nextQuestion)
-
-
 }
 
 function addImage(url, ID){
