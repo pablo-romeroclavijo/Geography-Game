@@ -46,13 +46,18 @@ function startQuiz(q){
     generateOption(element.name,element.ID)
   })
   let button = document.createElement('input')
+  button.classList.add("btn", "btn-primary")
   button.type = "submit"
+  button.value = "NEXT"
   submit.appendChild(button)
 }
 
 
 function generateOption(name,id){
-  
+  let radioBox = document.createElement('div')
+  radioBox.classList.add('radio-box', 'd-inline-flex')
+  optionSelect.appendChild(radioBox)
+
   console.log(name)
   let option1 = document.createElement("input")
   option1.classList.add("option-radio")
@@ -62,14 +67,14 @@ function generateOption(name,id){
   console.log("value " + option1.value)
   option1.name = "answer"
   console.log(option1)
-  optionSelect.appendChild(option1)
+  radioBox.appendChild(option1)
  
   let label = document.createElement('label')
   console.log(option1)
   label.classList.add("label-radio")
   label.setAttribute('for', option1.id)
   label.textContent = name
-  optionSelect.appendChild(label)
+  radioBox.appendChild(label)
 }
 
 function nextq(e){

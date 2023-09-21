@@ -52,7 +52,7 @@
     </ul>
 </nav>
     </nav>
-    <section class = 'd-flex rounded-5 justify-content-start' >
+    <section class = 'd-flex rounded-5 justify-content-center' >
         <form id="setting">
             <fieldset class = "form-control form-control-sm p-4">
                 <h2 class="h2.bootstrap headging" >Please select the desired level and region to start the quiz</h2>
@@ -74,21 +74,22 @@
                     <option value="H">Hard</option>
                 </select>
                 <br>
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="START">
+                <input class="btn btn-primary btn-lg btn-block d-grid col-3 mx-auto" type="submit" value="START">
             </fieldset>  
         </form>
     </section>
 
-    <section class="d-flex" >
-            <form  style="background-color: white;"  id = "quiz">   
-                <h2 id = "question">What is the name of the highlighted country in the below picture?</h2> 
-                <div class="col" id= "options">
+    <section class="d-flex " >
+            <form  class="d-flex bg-body-secondary rounded-5 justify-content-center row"  id = "quiz">   
+                <h2 class="row" id = "question">What is the name of the highlighted country in the below picture?</h2> 
+                <div class="d-flex col justify-content-center"  id= "options">
 
                 </div>
-                <div id ="worldMap">
+                <div class="d-flex justify-content-center" id="worldMap">
 
                 </div>
-                <div id="answerSubmit">
+ 
+                <div class="d-grid col-1 mx-auto" style="button-size: 30px" id="answerSubmit">
                     
                 </div>      
             </form>  
