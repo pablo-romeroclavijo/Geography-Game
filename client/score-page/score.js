@@ -30,6 +30,27 @@
 // });
 
 const tableBody = document.getElementById('tableBody')
+const scoreRecorded = document.getElementById('scoreRecorded')
+
+const searchParams = new URLSearchParams(window.location.search)
+  let params = {}
+  for (const param of searchParams) {
+    params[param[0]] = param[1]}
+console.log(params)
+
+
+let quiz = params.quiz
+let score = params.score
+let username = params.username
+
+if(quiz && score){
+    const message = document.createElement('h3')
+    if(username == undefined){
+        `Congratulations! you have scored ${score} points on ${quiz}`
+    }else{
+    message.textContent = `Congratulations ${username}, you have scored ${score} points on ${quiz}`}
+    scoreRecorded.appendChild(message)
+}
 
 fetchScoreBoard()
 
@@ -40,20 +61,20 @@ function createScoreTable(data) {
         let record = data[i]
 
         let tr = document.createElement('tr')
+        tr.id = `row ${i}`
         tableBody.appendChild(tr)
 
-        let th = document.createElement('th')
-        th.id = `row ${i}`
-        tr.appendChild(th)
-
-        const columns =['username', 'score', 'difficulty', 'game']
+        const columns =['username', 'score', 'difficulty', 'quiz']
+        let td = document.createElement('td')
+            td.textContent = `${i+1}`
+            tr.appendChild(td)
 
         for(let j = 0; j < columns.length; j++){
             let ele = columns[j]
             console.log(j, record[ele])
             let td = document.createElement('td')
             td.textContent = `${record[ele]}`
-            td.appendChild(th)
+            tr.appendChild(td)
         }
 
 
