@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "watchify ./assets/index.js -o bundle.js"
+    "dev": "watchify ./assets/index.js -o bundle.js",
+    "test-map-quiz": "npm run map_quiz.js"
   },
   "author": "",
   "license": "ISC",

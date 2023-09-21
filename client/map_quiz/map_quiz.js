@@ -26,9 +26,6 @@ let userName;
 
 function submituser(e){
   e.preventDefault()
-  console.log("clicked submit user")
-  console.log(userinput)
-  console.log(e.target)
   userName = e.target.name.value
   console.log(userName)
   userinput.style.display = "none"
@@ -78,8 +75,9 @@ function nextq(e){
   let passedAnswer = e.target.answer.value
   console.log("answer" + passedAnswer)
   if(passedAnswer.length == 0){
-    console.log("please select an asnwer")
-    alert("Please Select and answer")
+    
+    alert("Please Select an answer")
+    
   }else{
     checkAnwser(passedAnswer)
     if(number_of_qestions < 10){
