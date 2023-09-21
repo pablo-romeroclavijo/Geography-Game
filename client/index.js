@@ -1,7 +1,7 @@
 const tableBody = document.getElementById('tableBody')
 
 fetchScoreBoard()
-generateCarousel(500)
+generateCarousel(100)
 
 
 
@@ -60,7 +60,6 @@ function createScoreTable(data) {
 
         for(let j = 0; j < columns.length; j++){
             let ele = columns[j]
-            console.log(j, record[ele])
             let td = document.createElement('td')
             td.textContent = `${record[ele]}`
             tr.appendChild(td)
@@ -89,11 +88,10 @@ async function fetchImage(type, ID) {
   
     //Make sure to add your deployed API URL in this fetch
     // try {
-      const response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
+      let response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
       if(response.ok){
         const imageBlob = await response.blob()
         const imageURL = URL.createObjectURL(imageBlob)
-        addImage(imageURL, ID)
-      }
+        addImage(imageURL, ID)}
       else {throw 'Error status: ' + response.status}
-    }
+        }
