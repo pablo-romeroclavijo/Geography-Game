@@ -62,21 +62,29 @@ nav li {
 }
 
 
-
 .label-radio{
     display: block;
     line-height: 4.2em;
     padding: 0 0.62em;
     border: 1px solid #666;
+    color: white;
     border-radius: 0.25em;
     background-image: linear-gradient( to bottom, #978ae4, #5b4ce0 );
     box-shadow: inset 0 0 0.1em #fff, 0.2em 0.2em 0.2em rgba( 0, 0, 0, 0.3 );
-    font-size: 0.8em;
-    width: 200px;
+    font-size: 1em;
+    width: 300px;
     margin: 20px;
-    font-size: 20px;
+    font-size: 30px;
 }
 .label-radio:hover{
     border-color: #3c7fb1;
     background-image: linear-gradient( to bottom, #fff, #a9dbf6 );
+}
+footer {
+    background-color: #8a4fff; /* Footer background color */
+    text-align: center;
+    padding: 10px 0;
+    color: #ffffff; /* Footer text color */
+    width: 100%;
+
 }

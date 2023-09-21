@@ -121,7 +121,7 @@ function showScore(){
 function addImage(url){
   let map = document.createElement("img")
   map.src = url
-  map.width = 1500
+  
   worldMap.appendChild(map)
 }
 function nextcountries(){
