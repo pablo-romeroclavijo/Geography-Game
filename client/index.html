@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/index.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-        <script defer src="index.js" ></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="index.js" ></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/client/assets/Logo_v2.png" alt="Your Logo">
+    </header>
+    <nav class="navbar navbar-expand" >
 
-    <body style = 'background-color: grey'>
-      <nav class="navbar navbar-expand bg-body-secondary" data-bs-theme="dark" >
-        <div class="container-fluid justify-content-start m-3">
-            <img class = 'align-middle' src = "/client/assets/Logo_white.svg" width = '300px' >   </svg>
-          <div class='navbar navbar-brand position-relative start-0'>
-            <a class="nav-link fs-3" href="/client/index.html">Home</a>
-          </div>
+        <li class="nav-item">
+            <a class="nav-link" href="#" role="button" aria-expanded="false" style = "font-weight:bold;">
+                Home
+              </a>
+        </li>
 
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
@@ -40,19 +42,20 @@
                 <li><a class="dropdown-item" href="/client/flash_cards/flash_cards.html">Memory card game</a></li>
               </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/client/score-page/scorePage.html" role="button" aria-expanded="false">
+                    Score Board
+                  </a>
+            </li>
         </ul>
     </nav>
-
-        <section id="introMessage" class=" bg-dark-subtle  rounded-3 text-black p-4 m-auto mt-2 w-75" style="top: 27%;">
-            <div class="flex-row">
-                <h2 class="flex-row text-white bg-dark w-50 text-center rounded-5 p-2 m-auto mt-0">Welcome to Geo-App</h2>
-                <p class="flex-row e  rounded-3 text-black p-4" >
-                  Welcome to Geo-App -  the ultimate test of your geographical knowledge, for GCSE students.<br>
-                  Test your skills in our Flag Quiz or put your memory to the test in our Map quiz. Then come back later and try and beat you last score, or your buddy's scores!<br>
-                  Upcoming exams? Don't worry, we've got you! Our flash cards can help you memorise vital information for that nerve-wracking exam and help you feel more confident for the big day.
-                </p>
-            </div>
-        </section>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h1>Welcome to GeoApp</h1>
+            <p>Welcome to Geo-App -  the ultimate test of your geographical knowledge, for GCSE students.<br>
+                Test your skills in our Flag Quiz or put your memory to the test in our Map quiz. Then come back later and try and beat you last score, or your buddy's scores!<br>
+                Upcoming exams? Don't worry, we've got you! Our flash cards can help you memorise vital information for that nerve-wracking exam and help you feel more confident for the big day.
+            </p>
     
         <section id="resources" style="top: 60%; width:90%">
             <div class="d-flex flex-row justify-content-center" style="margin: 20px; width: 85%;">
@@ -73,31 +76,91 @@
                             <li> <a href="/client/map_quiz/map_quiz.html">Map Quiz</a></li>
                             <li> <a href = '#'>Memory cards</a></li>
                         </ul>
+        </div>
+
+    </div>
         
+
+
+    <div class="flex-container">
+        <div class="flex-item">
+   
+            <h2>Learning Resources</h2>
+
+                <a href="/client/flash_cards/flash_cards.html">
+                    <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px;">
+                        <p style="font-size: 20px;margin-bottom: 0">Flash Cards</p>
+                    </div>
+                </a>
+
+                <a  href="#">
+                    <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
+                        <p style="font-size: 20px; margin-bottom: 0">Search a Country</p>
+                    </div>
+                </a>
+
+
+        </div>
+        <div class="flex-item">
+            <h2>Games</h2>
+
+            <a href="/client/flag_quizz/flag_quiz.html">
+                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px;">
+                    <p style="font-size: 20px;margin-bottom: 0">Flag Quizz</p>
                 </div>
-                <div class="m-3 mt-0" style="display: flexbox; width: 50%" >
-                    <h2 class="text-white bg-dark w-25 text-center rounded-5 p-1 w-100" >Scoreboard</h2>
-                    <p class="bg-dark-subtle  rounded-3 text-black p-4" id="Scoreboard"></p>
-                    <div id="score-list">
-                      <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Username</th>
-                              <th scope="col">Score</th>
-                              <th scope="col">Difficulty</th>
-                              <th scope="col">Game</th>
-                            </tr>
-                          </thead>
-                          <tbody id="tableBody">
-              
-                          </tbody>
-                        </table>
-                  </div>
+            </a>
+
+            <a  href="/client/map_quiz/map_quiz.html">
+                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
+                    <p style="font-size: 20px; margin-bottom: 0">Map Quizz</p>
                 </div>
-        
+            </a>
+            <a  href="#">
+                <div class="flex-item" style="background-color: #8A4FFF; min-width: 200px">
+                    <p style="font-size: 20px; margin-bottom: 0">Memory Cards</p>
+                </div>
+            </a>
+        </div>
+
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel">
+
             </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-item">
+                <h2>Scoreboard</h2>
+                <div id="score-list">
+                    <table class="table table-striped ">
+                        <thead style="--bs-table-bg: #8A4FFF; --bs-table-accent-bg:: #E5ECF4" >
+                            <tr >
+                            <th scope="col">#</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Difficulty</th>
+                            <th scope="col">Game</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+<<<<<<< HEAD
         </section>
     
     </body>
     </html>
+=======
+        </div>
+
+    <footer>
+        &copy; 2023 GeoApp
+    </footer>
+</body>
+</html>
+>>>>>>> 68798d4881e1f80eb5ef82e8a8d35e723dcbc40d
