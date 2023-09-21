@@ -102,7 +102,8 @@ function addImage(url, ID){
   let img = document.createElement('img')
   img.classList.add('radio-img')
   img.src = url
-  img.width = 150
+  img.width = 250
+  img.id = 'f' + ID
   label.appendChild(img)
 
 }
@@ -142,10 +143,25 @@ function checkAnwser(e){
   
   if(answer == trueAnswer.ID){
     displayResult.textContent = 'Right Answer'
-    score += 1000
+    score += 100
+    for(j = 0 ; j < radioButtons.length; j++){
+      if(radioButtons[j].checked){
+        const ele = radioButtons[j].id
+        console.log(ele)
+        const img = document.querySelector(`#f${ele}`)
+        console.log(img)
+        img.setAttribute('style', 'background-color: green')
+        break}}
     console.log('right answer')
-    console.log(score)
   }else{
+    for(j = 0 ; j < radioButtons.length; j++){
+      if(radioButtons[j].checked){
+        const ele = radioButtons[j].id
+        const img = document.querySelector(`#f${ele}`)
+        img.setAttribute('style', 'background-color: red')
+        break}}
+      const img = document.getElementById(`f${trueAnswer.ID}`)
+      img.setAttribute('style', 'background-color: green')
     console.log('wrong answer')
     displayResult.textContent = 'Wrong Answer'
   }
@@ -193,10 +209,17 @@ async function fetchImage(type, ID) {
 // }
 
 async function postScore(){
+  const dict = {
+    'M': 'Medium',
+    'E': 'Easy',
+    'H': 'Hard',
+    'all': 'All levels',
+  }
+
   const data = {
     'username': username,
     'score' : score,
-    'difficulty': level,
+    'difficulty': dict[level],
     'quiz': 'Flag Quiz'
   }
 
