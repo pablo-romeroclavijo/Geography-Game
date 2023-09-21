@@ -52,8 +52,10 @@ function startQuiz(q){
 
 
 function generateOption(name,id){
+  
   console.log(name)
   let option1 = document.createElement("input")
+  option1.classList.add("option-radio")
   option1.type = "radio"
   option1.id = id
   option1.value = id
@@ -64,6 +66,7 @@ function generateOption(name,id){
  
   let label = document.createElement('label')
   console.log(option1)
+  label.classList.add("label-radio")
   label.setAttribute('for', option1.id)
   label.textContent = name
   optionSelect.appendChild(label)

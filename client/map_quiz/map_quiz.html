@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <script src="map_quiz.js" defer></script>
+    <link href="map_quiz.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style = 'background-color: grey'>
@@ -34,7 +35,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quizz</a></li>
                 <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quizz</a></li>
-                <li><a class="dropdown-item" href="#">Memory card game</a></li>
+                <li><a class="dropdown-item" href="/client/flash_cards/flash_cards.html">Memory card game</a></li>
               </ul>
             </li>
         </ul>
@@ -43,7 +44,7 @@
         <form id="setting">
             <fieldset class = "form-control form-control-sm p-4">
                 <h2 class="h2.bootstrap headging" >Please select the desired level and region to start the quiz</h2>
-                <label class=""  for="region">Region:</label>
+                <label style = "font-size: 30px;" class=""  for="region">Region:</label>
                 <select class = "form-select form-select-lg mb-3 " id="region" name="region">
                     <option value="EU">Europa</option>
                     <option value="AF">Africa</option>
@@ -54,7 +55,7 @@
                 
                 <br>
                 
-                <label for="level">Level:</label>
+                <label style = "font-size: 30px;"for="level">Level:</label>
                 <select class = "form-select form-select-lg mb-3 $form-select-border-width-200 " id="level" name="level">
                     <option value="E">Easy</option>
                     <option value="M">Medium</option>
@@ -67,10 +68,9 @@
     </section>
 
     <section class="d-flex" >
-          
-            <form id = "quiz">   
+            <form  style="background-color: white;"  id = "quiz">   
                 <h2 id = "question">What is the name of the highlighted country in the below picture?</h2> 
-                <div id = "options">
+                <div class="col" id= "options">
 
                 </div>
                 <div id ="worldMap">
@@ -86,6 +86,5 @@
             </form>
     </section>
     
-   
 </body>
 </html>
