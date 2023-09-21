@@ -1,6 +1,8 @@
 const query = document.querySelector("#level")
 const map = document.querySelector('#map')
 const info = document.querySelector('#info')
+const name = document.querySelector('#name')
+const flashCard = document.querySelector('#flashCard')
 
 
 
@@ -13,57 +15,57 @@ let trueAnswer = undefined
 
 function createFlashCard(data){
 
-const country = document.createElement('h1')
-const reg = document.createElement('p')
-const curr = document.createElement('p')
+const country = document.createElement('div')
+const reg = document.createElement('div')
+const curr = document.createElement('div')
 
 country.textContent = `${data.name}`
-country.classList.add('p-1')
-info.appendChild(country)
+country.classList.add('flex-item', 'h1' )
+country.style.background = "#8A4FFF"
+name.appendChild(country)
 
-const block = document.createElement('div')
-block.classList.add('d-flex', "justify-content-center")
-block.id = 'block'
-info.appendChild(block)
 
 reg.textContent = `Region: ${data.region}`
-reg.classList.add('d-inline-flex', 'fs-2', "p-3")
+reg.classList.add('flex-item', 'fs-2', "p-3")
 curr.textContent = `Currency: ${data.currency}`
-curr.classList.add('d-inline-flex', 'fs-2', "p-3")
-
-
-block.appendChild(reg)
-block.appendChild(curr)
-
-  
+curr.classList.add('flex-item', 'fs-2', "p-3")
 
 fetchImage('flags', data.ID)
+
+info.appendChild(reg)
+info.appendChild(curr)
+
+
+
 fetchImage('maps', data.ID)
 }
 
 function addImage(url, ID, type){
-  const block =document.querySelector('#block')
   let img = document.createElement('img')
   img.src = url
   
   if(type == 'maps'){
     img.id = `map${ID}`
-    img.width = 1500
+    img.width = 1450
     img.classList.add('m-3')
     map.appendChild(img)
   }else{
 
-    img.id = `flag${ID}`
     img.width = 150
     img.classList.add('p-3')
-    block.appendChild(img)}
+    info.appendChild(img)
+    
+    
+  }
 }
 
 
 function getCountry(e){
   e.preventDefault()
+  flashCard.style.display = 'block'
   info.innerHTML = ""
   map.innerHTML = ""
+  name.innerHTML = ""
 
   const [level, region, numberRequests] = [e.target.level.value , e.target.region.value, "1"];
   fetchCountry(level, region, numberRequests)

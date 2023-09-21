@@ -119,10 +119,20 @@ footer {
 
 /* table foramting */
 table{
-    border-collapse: collapse
+    border-collapse: collapse;
+    width: 60%
 }
 
-table td{
-    width: 0px;
+td{
+    width: 1px;
     word-wrap: break-word;
+}
+
+table{
+    border-radius: 20px;
+
+}
+
+tr{
+    border: 10px;
 }
