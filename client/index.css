@@ -18,6 +18,8 @@ p{
     margin-bottom: 0;
 }
 
+
+
 a:link,
 a:visited,
 a:hover,
@@ -26,6 +28,7 @@ a:active {
   text-align: center;
   vertical-align: middle;
 }
+
 /* Header */
 header {
     background-color: #8a4fff;
@@ -54,6 +57,7 @@ nav ul {
 nav li {
     display: inline;
     margin: 0 20px;
+
 }
 
 
