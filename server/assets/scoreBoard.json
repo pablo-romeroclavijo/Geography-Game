@@ -20,7 +20,8 @@
   {
     "username": "user4",
     "score": 78,
-    "difficulty": "M"
+    "difficulty": "M",
+    "quiz": "flags"
   },
   {
     "username": "user5",
@@ -80,7 +81,7 @@
     "username": "user14",
     "score": 82,
     "difficulty": "M",
-    "quiz": "flag"
-  },
-  {}
+    "quiz": "flags"
+  }
+
 ]
