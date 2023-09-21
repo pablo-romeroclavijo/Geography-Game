@@ -33,7 +33,7 @@ const tableBody = document.getElementById('tableBody')
 const scoreRecorded = document.querySelector('#scoreRecorded')
 const message = document.querySelector('#message')
 
-scoreRecorded.computedStyleMap.display = 'none'
+scoreRecorded.style.display = 'none'
 
 const searchParams = new URLSearchParams(window.location.search)
   let params = {}

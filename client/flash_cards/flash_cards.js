@@ -8,7 +8,7 @@ const flashCard = document.querySelector('#flashCard')
 
 query.addEventListener("submit", getCountry)
 
-
+flashCard.style.display = 'none'
 let trueAnswer = undefined
 
 //functions
