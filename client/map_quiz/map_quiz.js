@@ -19,7 +19,7 @@ let countries = {}
 let level;
 let region;
 let numberRequests;
-let number_of_qestions ;
+let number_of_qestions;
 let score;
 let userName;
 
@@ -82,7 +82,7 @@ function nextq(e){
     alert("Please Select and answer")
   }else{
     checkAnwser(passedAnswer)
-    if(number_of_qestions < 2){
+    if(number_of_qestions < 10){
     number_of_qestions++
     nextcountries()
     console.log("answerid " + id)
@@ -96,7 +96,7 @@ function nextq(e){
 
 function checkAnwser(answer){
   if(id == answer){
-    score++
+    score += 100
     console.log("score" + score)
   }else{
     console.log("wrong answer")
