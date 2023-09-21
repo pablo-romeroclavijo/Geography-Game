@@ -1,4 +1,4 @@
-giconst each = require('jest-each').default;
+const each = require('jest-each').default;
 const { checkAnwser} = require("./map_quiz.js");
 
 describe("checkAnswer", () => {
