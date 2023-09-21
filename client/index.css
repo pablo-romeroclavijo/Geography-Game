@@ -9,7 +9,7 @@ body {
 h1, h2{
     text-align: center;
     padding: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 p{
@@ -116,3 +116,13 @@ footer {
 .carousel-slide img {
     background-color: #ffffff;
     display: block;}
+
+/* table foramting */
+table{
+    border-collapse: collapse
+}
+
+table td{
+    width: 0px;
+    word-wrap: break-word;
+}

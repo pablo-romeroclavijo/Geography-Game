@@ -1,4 +1,5 @@
-const question = document.querySelector('#questions')
+const numbers = document.querySelector('#number')
+const question = document.querySelector('#question')
 const options = document.querySelector('#options')
 const submitButton = document.querySelector('#answerSubmit')
 const result = document.querySelector('#result')
@@ -40,12 +41,11 @@ function createQuestion(data){
   let quest = document.createElement('h3')
   let number = document.createElement('h2')
 
-  number.classList.add('p-2')
-  quest.classList.add('p-2')
+  quest.classList.add('p-')
   quest.textContent = `What is the flag of ${trueAnswer.name}?`
   number.textContent = `QUESTION ${i} of ${numberOfQuestions}`
 
-  question.appendChild(number)
+  numbers.appendChild(number)
   question.appendChild(quest)
 
 
@@ -58,19 +58,25 @@ function createQuestion(data){
   let button = document.createElement('button')
   button.id = 'SubmitButton'
   button.textContent = `Check answer`
-  button.classList.add('btn', 'btn-danger', 'position-static', 'm-2')
+  button.classList.add('btn', 'm-2', 'start-50', 'position-relative', 'translate-middle-x')
+  button.setAttribute('style', 'background-color: #8A4FFF; color: white;  font-size: 25px; " type="submit" value="Start Quiz"')
   submitButton.appendChild(button)
 
   let nextQuestion = document.createElement('button')
   nextQuestion.id = 'NextQuestion'
   if(i<numberOfQuestions){
     nextQuestion.textContent = `Next Question`
-    nextQuestion.classList.add('btn', 'btn-primary', 'position-static', 'm-2')}
+    nextQuestion.classList.add('btn', 'm-2', 'start-50', 'position-relative', 'translate-middle-x')
+    nextQuestion.setAttribute('style', 'background-color: #C3BEF7; color: black;  font-size: 25px; " type="submit"')
+    submitButton.appendChild(button)}
+    
   else{
     nextQuestion.textContent = `Finish Quiz`
-    nextQuestion.classList.add('btn', 'btn-secondary', 'position-static', 'm-2')
+    nextQuestion.classList.add('btn', 'm-2', 'start-50', 'position-relative', 'translate-middle-x')
+    nextQuestion.setAttribute('style', 'background-color: #C3BEF7; color: black;  font-size: 25px; " type="submit"')
   }
   nextQuestion.style.display = "none";
+  result.style.display = 'none'
   next.appendChild(nextQuestion)
 }
 
@@ -103,6 +109,7 @@ function addImage(url, ID){
 
 function getCountries(){
   if(i<numberOfQuestions+1){
+    number.innerHTML = ''
     question.innerHTML = ""
     options.innerHTML = ""
     submitButton.innerHTML = ""
@@ -124,7 +131,7 @@ function checkAnwser(e){
 
 
   result.innerHTML=""
-  let displayResult = document.createElement('p')
+  let displayResult = document.createElement('h2')
   
   for(j = 0 ; j < radioButtons.length; j++){
     if(radioButtons[j].checked){
@@ -144,6 +151,7 @@ function checkAnwser(e){
   }
 
 result.appendChild(displayResult)
+result.style.display =  'flex'
 document.getElementById('SubmitButton').style.display = "none"
 document.getElementById('NextQuestion').style.display = "inline-block"
 i++
