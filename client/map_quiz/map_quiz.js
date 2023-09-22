@@ -149,7 +149,7 @@ function getCountries(e){
   console.log("setting clicked")
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
-
+  question.style.display = "block"
   level = e.target.level.value
   region = e.target.region.value
   numberRequests = "4"
