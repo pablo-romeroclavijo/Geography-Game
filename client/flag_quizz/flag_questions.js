@@ -150,7 +150,7 @@ function checkAnwser(e){
         console.log(ele)
         const img = document.querySelector(`#f${ele}`)
         console.log(img)
-        img.setAttribute('style', 'background-color: green')
+        img.setAttribute('style', 'background-color: #28F80D')
         break}}
     console.log('right answer')
   }else{
@@ -158,10 +158,10 @@ function checkAnwser(e){
       if(radioButtons[j].checked){
         const ele = radioButtons[j].id
         const img = document.querySelector(`#f${ele}`)
-        img.setAttribute('style', 'background-color: red')
+        img.setAttribute('style', 'background-color: #FF0000')
         break}}
       const img = document.getElementById(`f${trueAnswer.ID}`)
-      img.setAttribute('style', 'background-color: green')
+      img.setAttribute('style', 'background-color: #28F80D')
     console.log('wrong answer')
     displayResult.textContent = 'Wrong Answer'
   }
