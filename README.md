@@ -1,13 +1,4 @@
 Contents
-1. Project Title
-2. Motivation for the project
-3. Build status
-4. Code style
-5. Tech/Framework used
-6. Features
-7. How to use?
-8. Tests
-9. Credits 
 
 1. Project Title - "Geo-App"
 This project is an educational game in the field of Geography to help high-school students with their learning.
