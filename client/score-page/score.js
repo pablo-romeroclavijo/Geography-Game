@@ -48,10 +48,11 @@ let username = params.username
 
 if(quiz && score){
     if(username == "undefined"){
-       message.textContent =  `Congratulations! you have scored ${score} points on ${quiz}`
+        console.log('aa')
+        message.textContent =  `Congratulations! you have scored ${score} points on ${quiz}`
     }else{
     message.textContent = `Congratulations ${username}, you have scored ${score} points on ${quiz}`}
-    scoreRecorded.computedStyleMap.display = 'flex'
+    scoreRecorded.style.display = 'flex'
 }
 
 fetchScoreBoard()
