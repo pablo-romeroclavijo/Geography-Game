@@ -97,7 +97,7 @@ function nextq(e){
     
   }else{
     checkAnwser(passedAnswer)
-    if(number_of_qestions < 10){
+    if(number_of_qestions < 4){
     number_of_qestions++
     nextcountries()
     console.log("answerid " + id)

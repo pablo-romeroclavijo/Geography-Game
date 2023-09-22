@@ -13,7 +13,7 @@
   }
   
   .radio-label {
-    width: 300px;
+    min-width: 300px;
     text-align: center;
     margin-left: 10px;
     background-color: #C3BEF7;
