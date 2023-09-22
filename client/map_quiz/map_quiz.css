@@ -1,0 +1,70 @@
+.flex-container {
+    background-color: white;
+  }
+  
+  .flex-item{
+    text-align-last: center;
+  }
+  /* radiobutton formations */
+  .radio-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .radio-label {
+    min-width: 300px;
+    text-align: center;
+    margin-left: 10px;
+    background-color: #C3BEF7;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 30px;
+
+
+  }
+  
+  .radio-input {
+    display: none;
+  }
+  
+  .radio-img {
+    width: 555 px; /* Adjust the width as needed */
+    height: 150px;
+    background-color: white;
+    border: 3px solid #8A4FFF ;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  .radio-input:checked + .radio-label {
+    background-color: #8A4FFF;
+  }
+  
+  .form-container {
+    background-color: white;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Adjust the width as needed */
+    margin: auto;
+    margin-top: 60px;
+  }
+  
+  .form-input{
+    align-items: center;
+  }
+  
+  li{
+    font-size: 25px;
+    padding-left: 20px;
+    
+  }
+
+  img{
+    width: 1500px;;
+  }
+
+  box{
+    width:100px
+  }

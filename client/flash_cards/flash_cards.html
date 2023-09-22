@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash cards</title>
+  <link rel="stylesheet" href="/client/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="./flash_cards.js" ></script>
+</head>
+
+<body  style = 'background-color: #C3BEF7'>
+  <header>
+    <a href="/client/index.html">
+    <img class="logo" src="/client/assets/Logo_v2.png" alt="Your Logo">
+    </a>
+</header>
+<nav class="navbar navbar-expand justify-content-center" >
+
+    <li class="nav-item">
+        <a class="nav-link" href="/client/index.html" role="button" aria-expanded="false" style = "font-weight:bold; font-size: 25px;">
+            Home
+          </a>
+    </li>
+
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style = "font-weight:bold; font-size: 25px;">
+        Learning Resources
+      </a>
+        <ul class="dropdown-menu" style = "width: 260px;  --bs-dropdown-link-hover-bg: #C3BEF7;  --bs-dropdown-link-active-bg: #8A4FFF"  >
+          <li><a class="dropdown-item " href="/client/flash_cards/flash_cards.html">Flash Card</a></li>
+          <li><a class="dropdown-item" href="#">Search Country</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style = "font-weight:bold; font-size: 25px;">
+          Games
+        </a>
+          <ul class="dropdown-menu" style=" --bs-dropdown-link-hover-bg: #C3BEF7;  --bs-dropdown-link-active-bg: #8A4FFF ">
+            <li><a class="dropdown-item " href="/client/flag_quizz/flag_quiz.html">Flag Quiz</a></li>
+            <li><a class="dropdown-item" href="/client/map_quiz/map_quiz.html">Map Quiz</a></li>
+            <li><a class="dropdown-item" href="/client/flash_cards/flash_cards.html">Memory card game</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/client/score-page/scorePage.html" role="button" aria-expanded="false" style = "font-weight:bold; font-size: 25px;">
+                Score Board
+              </a>
+        </li>
+    </ul>
+</nav>
+
+    <section class="flex-container mt-3 rounded-5" style="background-color: white; width: fit-content">
+        <form class ="p-0" id="level">
+            <h2 style = 'text-align: center;' class="p-1" >Select from Level and Region</h2>
+                <div class="d-inline-flex  m-2 "> 
+                    <label class="fs-5 p-2" for="region">Region:</label>
+                    <select class="p-1" id="region" name="region">
+                        <option value = 'all'>All</option>
+                        <option value="EU">Europa</option>
+                        <option value="AF">Africa</option>
+                        <option value="AM">America</option>
+                        <option value="OC">Oceania</option>
+                        <option value="AS">Asia</option>
+                    </select>
+                </div>
+              
+            <div class="d-inline-flex m-2">
+                <label class="fs-5 p-2" for="level">Level: </label>
+                <select class="p-1" id="level" name="level">
+                    <option value = 'all'>All</option>
+                    <option value="E">Easy</option>
+                    <option value="M">Medium</option>
+                    <option value="H">Hard</option>
+                </select>
+            </div>
+    
+                <br>
+                <input class="btn m-3 start-50 position-relative translate-middle-x" style ="background-color: #8A4FFF; color: white;  font-size: 25px; " type="submit" value="New Flash Card">
+        </form>
+
+    </section>
+
+
+    <section class = 'start-50 bg-white m-5 p-4 rounded-5 justify-content-center' id="flashCard"  style = 'min-width: 1500px; display: none'>
+        <div class="flex-container start-50 p-0" style="text-align: center;" id="name">
+        </div>
+
+        <div class="flex-container start-50 p-0" style="text-align: center;" id="info">
+        </div>
+
+        <div class="flex-container start-50" style="text-align: center;" id="map">
+        </div>
+
+
+    </section>
+
+</body>
+</html>

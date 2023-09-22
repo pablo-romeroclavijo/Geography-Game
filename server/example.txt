@@ -1,0 +1,5 @@
+  {
+    "username": "user15",
+    "score": "42",
+    "difficulty": "M"
+  }

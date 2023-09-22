@@ -1,0 +1,86 @@
+[
+  {
+    "username": "John",
+    "score": 25,
+    "difficulty": "Medium",
+    "quiz": "Map Quiz"
+  },
+  {
+    "username": "Emma",
+    "score": 10,
+    "difficulty": "Hard",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Michael",
+    "score": 32,
+    "difficulty": "Easy",
+    "quiz": "Map Quiz"
+  },
+  {
+    "username": "Sophia",
+    "score": 12,
+    "difficulty": "Medium",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Liam",
+    "score": 82,
+    "difficulty": "Easy",
+    "quiz": "Map Quiz"
+  },
+  {
+    "username": "Olivia",
+    "score": 0,
+    "difficulty": "Medium",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "William",
+    "score": 42,
+    "difficulty": "Easy",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Ava",
+    "score": 91,
+    "difficulty": "Hard",
+    "quiz": "Map Quiz"
+  },
+  {
+    "username": "James",
+    "score": 60,
+    "difficulty": "Easy",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Charlotte",
+    "score": 11,
+    "difficulty": "Easy",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Benjamin",
+    "score": 8,
+    "difficulty": "Medium",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Mia",
+    "score": 10,
+    "difficulty": "Hard",
+    "quiz": "Map Quiz"
+  },
+  {
+    "username": "Daniel",
+    "score": 6,
+    "difficulty": "Hard",
+    "quiz": "Flag Quiz"
+  },
+  {
+    "username": "Sophie",
+    "score": 11,
+    "difficulty": "Medium",
+    "quiz": "Map Quiz"
+  }
+]
