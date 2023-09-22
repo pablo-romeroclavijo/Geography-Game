@@ -21,12 +21,12 @@
 }
 
 .radio-img {
-  width: 400 px; /* Adjust the width as needed */
-  height: 100px;
+  width: 555 px; /* Adjust the width as needed */
+  height: 150px;
   background-color: white;
-  border: 3px solid #8A4FFF ;
+  border: 2px solid #C3BEF7 ;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .radio-input:checked + .radio-label .radio-img {

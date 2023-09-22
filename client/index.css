@@ -60,6 +60,11 @@ nav li {
 
 }
 
+nav ul li{
+    font-size: 25px;
+}
+
+
 
 /* Flexbox container for content */
 .flex-container {

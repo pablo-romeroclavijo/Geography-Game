@@ -24,8 +24,14 @@ country.classList.add('flex-item', 'h1' )
 country.style.background = "#8A4FFF"
 name.appendChild(country)
 
-
-reg.textContent = `Region: ${data.region}`
+const dict = {
+  'EU': 'Europe',
+  'AM': 'America',
+  'AS': 'Asia',
+  'OC': 'Oceania',
+  'AF': 'Africa'
+}
+reg.textContent = `Region: ${dict[data.region]}`
 reg.classList.add('flex-item', 'fs-2', "p-3")
 curr.textContent = `Currency: ${data.currency}`
 curr.classList.add('flex-item', 'fs-2', "p-3")
@@ -105,3 +111,5 @@ async function fetchImage(type, ID) {
   }
   catch(e){console.log('error at  catch')}
 }
+
+module.exports = { addImage, getCountry, fetchCountry, fetchImage, }
