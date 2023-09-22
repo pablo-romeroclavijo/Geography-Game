@@ -18,10 +18,10 @@ This project uses, HTML, CSS, Bootstrap, and Javascript.
 ##  6. Features 
 Features we though would be good for the User Experience consist of:
 
-    * Difficulty settings. If a learner starts a quiz and it is far too hard for them, they are not very likely to try the quiz again, giving the user the option to start from an easier setting gives them a steady pace at which to learn and they will be less likey to give up.
-    * A scoring sytem. We believed that a score board and the ability to see how other learners are doing would incentivise competative students to practice more in order to increase their rank.
-    * Multiple choice quiz questions. Sometimes learners find it diffficult to access information so readily. With multiple-choice questions, a learner can feel more confident in answering and the experience will be slightly quicker, leading to faster learning times.
-    * Instant feedback. When a learner can see immediate feedback, it can be rewarding for them to see, or they can instantly make notes on any errors as they arise.
+* Difficulty settings. If a learner starts a quiz and it is far too hard for them, they are not very likely to try the quiz again, giving the user the option to start from an easier setting gives them a steady pace at which to learn and they will be less likey to give up.
+* A scoring sytem. We believed that a score board and the ability to see how other learners are doing would incentivise competative students to practice more in order to increase their rank.
+* Multiple choice quiz questions. Sometimes learners find it diffficult to access information so readily. With multiple-choice questions, a learner can feel more confident in answering and the experience will be slightly quicker, leading to faster learning times.
+* Instant feedback. When a learner can see immediate feedback, it can be rewarding for them to see, or they can instantly make notes on any errors as they arise.
 
 ## 7. How to use?
 The product does not require installation.
