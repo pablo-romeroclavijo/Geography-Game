@@ -1,11 +1,13 @@
 
 const question = document.querySelector("#question")
 const setting = document.querySelector("#setting")
-const submit = document.querySelector("#answerSubmit")
+
+const submit = document.getElementById('submit')
 const worldMap = document.querySelector("#worldMap")
 const optionSelect = document.querySelector("#options")
 const form = document.querySelector("#quiz")
 const userinput = document.querySelector("#userinput")
+const block = document.getElementById('block')
 console.log(userinput)
 
 userinput.style.display = "none"
@@ -23,6 +25,8 @@ let number_of_qestions;
 let score;
 let userName;
 
+block.style.display = 'none'
+
 
 function submituser(e){
   e.preventDefault()
@@ -35,7 +39,8 @@ function submituser(e){
 }
 
 function startQuiz(q){
-  question.style.display = "block"
+  block.style.display = 'block'
+
   const randomIndex = Math.floor(Math.random()*q.length)
   console.log(randomIndex)
   id = q[randomIndex].ID
@@ -45,10 +50,10 @@ function startQuiz(q){
     console.log(element)
     generateOption(element.name,element.ID)
   })
-  let button = document.createElement('input')
-  button.classList.add("btn", "btn-primary")
-  button.type = "submit"
-  button.value = "NEXT"
+  let button = document.createElement('button')
+  button.textContent = `Submit and Next`
+  button.classList.add('btn', 'm-2', 'start-50', 'position-relative', 'translate-middle-x')
+  button.setAttribute('style', "background-color: #8A4FFF; color: white;  font-size: 25px;")
   submit.appendChild(button)
 }
 
@@ -60,7 +65,7 @@ function generateOption(name,id){
 
   console.log(name)
   let option1 = document.createElement("input")
-  option1.classList.add("option-radio")
+  option1.classList.add("radio-input")
   option1.type = "radio"
   option1.id = id
   option1.value = id
@@ -71,10 +76,13 @@ function generateOption(name,id){
  
   let label = document.createElement('label')
   console.log(option1)
-  label.classList.add("label-radio")
+  label.classList.add("radio-label")
   label.setAttribute('for', option1.id)
+
   label.textContent = name
   radioBox.appendChild(label)
+
+  
 }
 
 function nextq(e){
@@ -110,12 +118,12 @@ function checkAnwser(answer){
 }
 
 function showScore(){
+
   worldMap.innerHTML = ""
   worldMap.style=""
   optionSelect.innerHTML = ""
-  optionSelect.innerHTML =""
-  submit.innerHTML= ""
-  submit.style = ""
+  submit.innerHTML = ''
+
   question.textContent = ""
   question.textContent = `Final result: ${score}`
   userinput.style.display = "block"
@@ -124,13 +132,15 @@ function showScore(){
 function addImage(url){
   let map = document.createElement("img")
   map.src = url
-  
+  console.log(url)
+  console.log('aaa')
   worldMap.appendChild(map)
 }
 function nextcountries(){
+
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+  submit.innerHTML = ''
   fetchCountries(level, region, numberRequests)
 }
 
@@ -139,7 +149,7 @@ function getCountries(e){
   console.log("setting clicked")
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+
   level = e.target.level.value
   region = e.target.region.value
   numberRequests = "4"
@@ -170,7 +180,6 @@ async function fetchImage(type,ID) {
       console.log("ok")
       const mapBolb = await response.blob()
       const imageURL = URL.createObjectURL(mapBolb)
-      console.log(imageURL)
       addImage(imageURL)
     }
     else {throw 'Error status: ' + response.status}
