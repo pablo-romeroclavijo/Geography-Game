@@ -15,7 +15,7 @@ const carousel = document.querySelector('.carousel');
         }
 
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % 40; // Assuming 3 slides per row
+            currentIndex = (currentIndex + 1) % 40;
             showSlide(currentIndex);
         }
 
