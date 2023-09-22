@@ -88,7 +88,7 @@ function createScoreTable(data) {
 
 async function fetchScoreBoard() {
     try {
-        const response = await fetch("http://localhost:3000/scoreBoard")
+        const response = await fetch("https://geo-app-l23s.onrender.com/scoreBoard")
         if(response.ok) {
             const data = await response.json()
             createScoreTable(data)

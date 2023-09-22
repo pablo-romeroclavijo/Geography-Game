@@ -72,7 +72,7 @@ function createScoreTable(data) {
 
 async function fetchScoreBoard() {
     try {
-        const response = await fetch("http://localhost:3000/scoreBoard")
+        const response = await fetch("https://geo-app-l23s.onrender.com/scoreBoard")
         if(response.ok) {
             const data = await response.json()
             createScoreTable(data)
@@ -88,7 +88,7 @@ async function fetchImage(type, ID) {
   
     //Make sure to add your deployed API URL in this fetch
     // try {
-      let response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
+      let response = await fetch(`https://geo-app-l23s.onrender.com/image/${type}/${ID}`);
       if(response.ok){
         const imageBlob = await response.blob()
         const imageURL = URL.createObjectURL(imageBlob)
@@ -96,5 +96,3 @@ async function fetchImage(type, ID) {
       else {throw 'Error status: ' + response.status}
         }
 
-
-module.exports = { showSlide, nextSlide, generateCarousel, addImage, createScoreTable, fetchScoreBoard, fetchImage }

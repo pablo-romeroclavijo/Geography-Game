@@ -162,7 +162,7 @@ function getCountries(e){
 async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch
   try {
-    const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
+    const response = await fetch(`https://geo-app-l23s.onrender.com/countries/${level}&${region}&${numberRequests}`);
     if(response.ok){
         const data = await response.json()
         startQuiz(data)
@@ -176,7 +176,7 @@ async function fetchImage(type,ID) {
   
   //Make sure to add your deployed API URL in this fetch
    try {
-    const response = await fetch(`http://localhost:3000/image/${type}/${ID}`);
+    const response = await fetch(`https://geo-app-l23s.onrender.com/image/${type}/${ID}`);
     if(response.ok){
       console.log("ok")
       const mapBolb = await response.blob()
@@ -211,7 +211,7 @@ async function postScore(username){
     body: JSON.stringify(data)}
     
     try {
-      const response =  await fetch ('http://localhost:3000/updateScore', options)
+      const response =  await fetch ('https://geo-app-l23s.onrender.com/updateScore', options)
       if(response.ok){
         console.log('Record created')
 
