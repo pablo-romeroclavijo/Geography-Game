@@ -236,7 +236,7 @@ async function postScore(){
       if(response.ok){
         console.log('Record created')
 
-        location.href = `/client/score-page/scorePage.html?username=${username}&score=${score}&quiz=FlagQuiz`
+        location.href = `/score-page/scorePage.html?username=${username}&score=${score}&quiz=FlagQuiz`
       }else {throw 'Error status: ' + response.status
     }
     }catch(e){console.log('error at  catch')}
