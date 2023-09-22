@@ -18,7 +18,7 @@ const searchParams = new URLSearchParams(window.location.search)
   let params = {}
   for (const param of searchParams) {
     params[param[0]] = param[1]}
-console.log(params)
+
 
 let trueAnswer = undefined
 let i = 1
@@ -147,9 +147,9 @@ function checkAnwser(e){
     for(j = 0 ; j < radioButtons.length; j++){
       if(radioButtons[j].checked){
         const ele = radioButtons[j].id
-        console.log(ele)
+
         const img = document.querySelector(`#f${ele}`)
-        console.log(img)
+
         img.setAttribute('style', 'background-color: #28F80D')
         break}}
     console.log('right answer')
@@ -163,8 +163,10 @@ function checkAnwser(e){
       const img = document.getElementById(`f${trueAnswer.ID}`)
       img.setAttribute('style', 'background-color: #28F80D')
     console.log('wrong answer')
+
     displayResult.textContent = 'Wrong Answer'
   }
+  console.log(score)  
 
 result.appendChild(displayResult)
 result.style.display =  'flex'
@@ -182,7 +184,6 @@ async function fetchCountries(level, region, numberRequests) {
   //Make sure to add your deployed API URL in this fetch
   try {
     const response = await fetch(`http://localhost:3000/countries/${level}&${region}&${numberRequests}`);
-    console.log(response.status)
     if(response.ok){
         const data = await  response.json()
         createQuestion(data)
