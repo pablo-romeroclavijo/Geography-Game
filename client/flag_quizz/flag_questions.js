@@ -241,9 +241,5 @@ async function postScore(){
     }catch(e){console.log('error at  catch')}
 }
 
-function add(a, b) {
-  return a + b;
-}
-
-module.exports = add;
+module.exports = { createQuestion, addImage, getCountries, checkAnwser, fetchCountries, fetchImage, postScore };
 

@@ -111,3 +111,5 @@ async function fetchImage(type, ID) {
   }
   catch(e){console.log('error at  catch')}
 }
+
+module.exports = { addImage, getCountry, fetchCountry, fetchImage, }
