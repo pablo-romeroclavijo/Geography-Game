@@ -13,7 +13,11 @@ global.window = window;
 global.document = window.document;
 global.$ = $;
 
-const {add, createQuestion, addImage, getCountries, checkAnwser, fetchCountries, fetchImage, postScore } = require('./flag_questions.js');
+const { createQuestion, addImage, getCountries, checkAnwser, fetchCountries, fetchImage, postScore } = require('./flag_questions.js');
+
+// Mock the fetch function
+global.fetch = jest.fn();
+
 
 // test('adds 1 + 2 to equal 3', () => {
 //   expect(add(1, 2)).toBe(3);
@@ -29,41 +33,70 @@ const {add, createQuestion, addImage, getCountries, checkAnwser, fetchCountries,
 
 
 describe('Function Data Types', () => {
-  // Test if createQuestion is a function
+
   it('createQuestion should be a function', () => {
     expect(typeof createQuestion).toBe('function');
   });
 
-  // Test if addImage is a function
   it('addImage should be a function', () => {
     expect(typeof addImage).toBe('function');
   });
 
-  // Test if getCountries is a function
   it('getCountries should be a function', () => {
     expect(typeof getCountries).toBe('function');
   });
 
-  // Test if checkAnwser is a function
   it('checkAnwser should be a function', () => {
     expect(typeof checkAnwser).toBe('function');
   });
 
-  // Test if fetchCountries is a function
   it('fetchCountries should be a function', () => {
     expect(typeof fetchCountries).toBe('function');
   });
 
-  // Test if fetchImage is a function
   it('fetchImage should be a function', () => {
     expect(typeof fetchImage).toBe('function');
   });
 
-  // Test if postScore is a function
   it('postScore should be a function', () => {
     expect(typeof postScore).toBe('function');
   });
 
+  it('should fetch an image and call addImage on success', async () => {
+    // Mock a successful fetch response
+    global.fetch.mockResolvedValue({
+      ok: true,
+      blob: jest.fn(async () => new Blob()), // Mock a blob
+    });
+
+    // Mock addImage function
+    const addImage = jest.fn();
+
+    // Call the function
+    await fetchImage('flags', 123);
+
+    // Check if fetch is called with the correct URL
+    expect(fetch).toHaveBeenCalledWith('http://localhost:3000/image/flags/123');
+
+    // Check if addImage is called with the expected arguments
+    expect(addImage).toHaveBeenCalledWith(expect.any(String), 123);
+  });
+
+  it('should throw an error on a failed fetch', async () => {
+    // Mock a failed fetch response
+    global.fetch.mockResolvedValue({
+      ok: false,
+      status: 404,
+    });
+
+    // Call the function
+    try {
+      await fetchImage('flags', 123);
+    } catch (error) {
+      // Check if the error message matches
+      expect(error).toEqual('Error status: 404');
+    }
+  });
   
 });
 

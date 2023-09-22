@@ -95,3 +95,6 @@ async function fetchImage(type, ID) {
         addImage(imageURL, ID)}
       else {throw 'Error status: ' + response.status}
         }
+
+
+module.exports = { showSlide, nextSlide, generateCarousel, addImage, createScoreTable, fetchScoreBoard, fetchImage }

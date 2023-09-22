@@ -213,3 +213,5 @@ async function postScore(username){
     }catch(e){console.log('error at  catch')}
 }
   
+
+module.exports = { submituser, startQuiz, generateOption, nextq, checkAnwser, showScore, addImage, nextcountries, getCountries, fetchCountries, fetchImage,postScore}
