@@ -2,85 +2,85 @@
   {
     "username": "John",
     "score": 7,
-    "difficulty": "M",
-    "quiz": "flag"
+    "difficulty": "Medium",
+    "quiz": "Map Quizz"
   },
   {
     "username": "Emma",
     "score": 10,
-    "difficulty": "H",
-    "quiz": "flag"
+    "difficulty": "Hard",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Michael",
     "score": 3,
-    "difficulty": "E",
-    "quiz": "flag"
+    "difficulty": "Easy",
+    "quiz": "Map Quizz"
   },
   {
     "username": "Sophia",
     "score": 12,
-    "difficulty": "M",
-    "quiz": "flags"
+    "difficulty": "Medium",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Liam",
     "score": 8,
-    "difficulty": "E",
-    "quiz": "flag"
+    "difficulty": "Easy",
+    "quiz": "Map Quizz"
   },
   {
     "username": "Olivia",
     "score": 0,
-    "difficulty": "M",
-    "quiz": "flag"
+    "difficulty": "Medium",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "William",
     "score": 4,
-    "difficulty": "E",
-    "quiz": "flag"
+    "difficulty": "Easy",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Ava",
     "score": 9,
-    "difficulty": "H",
-    "quiz": "flag"
+    "difficulty": "Hard",
+    "quiz": "Map Quizz"
   },
   {
     "username": "James",
     "score": 6,
-    "difficulty": "E",
-    "quiz": "flag"
+    "difficulty": "Easy",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Charlotte",
     "score": 11,
-    "difficulty": "E",
-    "quiz": "flag"
+    "difficulty": "Easy",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Benjamin",
     "score": 8,
-    "difficulty": "M",
-    "quiz": "flag"
+    "difficulty": "Medium",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Mia",
     "score": 10,
-    "difficulty": "H",
-    "quiz": "flag"
+    "difficulty": "Hard",
+    "quiz": "Map Quizz"
   },
   {
     "username": "Daniel",
     "score": 6,
-    "difficulty": "H",
-    "quiz": "flag"
+    "difficulty": "Hard",
+    "quiz": "Flag Quizz"
   },
   {
     "username": "Sophie",
     "score": 11,
-    "difficulty": "M",
-    "quiz": "flags"
+    "difficulty": "Medium",
+    "quiz": "Flag Quizz"
   }
 ]
