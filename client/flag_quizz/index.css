@@ -1,3 +1,11 @@
+.flex-container {
+  background-color: white;
+}
+
+.flex-item{
+  text-align-last: center;
+}
+/* radiobutton formations */
 .radio-box {
   display: flex;
   align-items: center;
@@ -13,13 +21,16 @@
 }
 
 .radio-img {
-  width: 150 px; /* Adjust the width as needed */
-  border: 2px solid #ccc;
+  width: 555 px; /* Adjust the width as needed */
+  height: 150px;
+  background-color: white;
+  border: 3px solid #8A4FFF ;
+  border-radius: 20px;
   padding: 10px;
 }
 
 .radio-input:checked + .radio-label .radio-img {
-  background-color: grey;
+  background-color: #8A4FFF;
 }
 
 .form-container {
@@ -34,4 +45,10 @@
 
 .form-input{
   align-items: center;
+}
+
+li{
+  font-size: 25px;
+  padding-left: 20px;
+  
 }

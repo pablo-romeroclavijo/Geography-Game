@@ -1,5 +1,3 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
 
 const query = document.querySelector("#level")
 

@@ -1,11 +1,13 @@
 
 const question = document.querySelector("#question")
 const setting = document.querySelector("#setting")
-const submit = document.querySelector("#answerSubmit")
+
+const submit = document.getElementById('submit')
 const worldMap = document.querySelector("#worldMap")
 const optionSelect = document.querySelector("#options")
 const form = document.querySelector("#quiz")
 const userinput = document.querySelector("#userinput")
+const block = document.getElementById('block')
 console.log(userinput)
 
 userinput.style.display = "none"
@@ -23,12 +25,11 @@ let number_of_qestions;
 let score;
 let userName;
 
+block.style.display = 'none'
+
 
 function submituser(e){
   e.preventDefault()
-  console.log("clicked submit user")
-  console.log(userinput)
-  console.log(e.target)
   userName = e.target.name.value
   console.log(userName)
   userinput.style.display = "none"
@@ -38,7 +39,8 @@ function submituser(e){
 }
 
 function startQuiz(q){
-  question.style.display = "block"
+  block.style.display = 'block'
+
   const randomIndex = Math.floor(Math.random()*q.length)
   console.log(randomIndex)
   id = q[randomIndex].ID
@@ -48,28 +50,39 @@ function startQuiz(q){
     console.log(element)
     generateOption(element.name,element.ID)
   })
-  let button = document.createElement('input')
-  button.type = "submit"
+  let button = document.createElement('button')
+  button.textContent = `Submit and Next`
+  button.classList.add('btn', 'm-2', 'start-50', 'position-relative', 'translate-middle-x')
+  button.setAttribute('style', "background-color: #8A4FFF; color: white;  font-size: 25px;")
   submit.appendChild(button)
 }
 
 
 function generateOption(name,id){
+  let radioBox = document.createElement('div')
+  radioBox.classList.add('radio-box', 'd-inline-flex')
+  optionSelect.appendChild(radioBox)
+
   console.log(name)
   let option1 = document.createElement("input")
+  option1.classList.add("radio-input")
   option1.type = "radio"
   option1.id = id
   option1.value = id
   console.log("value " + option1.value)
   option1.name = "answer"
   console.log(option1)
-  optionSelect.appendChild(option1)
+  radioBox.appendChild(option1)
  
   let label = document.createElement('label')
   console.log(option1)
+  label.classList.add("radio-label")
   label.setAttribute('for', option1.id)
+
   label.textContent = name
-  optionSelect.appendChild(label)
+  radioBox.appendChild(label)
+
+  
 }
 
 function nextq(e){
@@ -78,8 +91,9 @@ function nextq(e){
   let passedAnswer = e.target.answer.value
   console.log("answer" + passedAnswer)
   if(passedAnswer.length == 0){
-    console.log("please select an asnwer")
-    alert("Please Select and answer")
+    
+    alert("Please Select an answer")
+    
   }else{
     checkAnwser(passedAnswer)
     if(number_of_qestions < 10){
@@ -104,9 +118,12 @@ function checkAnwser(answer){
 }
 
 function showScore(){
+
   worldMap.innerHTML = ""
+  worldMap.style=""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+  submit.innerHTML = ''
+
   question.textContent = ""
   question.textContent = `Final result: ${score}`
   userinput.style.display = "block"
@@ -115,13 +132,15 @@ function showScore(){
 function addImage(url){
   let map = document.createElement("img")
   map.src = url
-  map.width = 1500
+  console.log(url)
+  console.log('aaa')
   worldMap.appendChild(map)
 }
 function nextcountries(){
+
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+  submit.innerHTML = ''
   fetchCountries(level, region, numberRequests)
 }
 
@@ -130,7 +149,7 @@ function getCountries(e){
   console.log("setting clicked")
   worldMap.innerHTML = ""
   optionSelect.innerHTML = ""
-  submit.innerHTML = ""
+
   level = e.target.level.value
   region = e.target.region.value
   numberRequests = "4"
@@ -161,7 +180,6 @@ async function fetchImage(type,ID) {
       console.log("ok")
       const mapBolb = await response.blob()
       const imageURL = URL.createObjectURL(mapBolb)
-      console.log(imageURL)
       addImage(imageURL)
     }
     else {throw 'Error status: ' + response.status}
