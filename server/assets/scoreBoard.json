@@ -1,87 +1,86 @@
 [
   {
-    "username": "user1",
-    "score": 42,
+    "username": "John",
+    "score": 7,
     "difficulty": "M",
     "quiz": "flag"
   },
   {
-    "username": "user2",
-    "score": 65,
+    "username": "Emma",
+    "score": 10,
     "difficulty": "H",
     "quiz": "flag"
   },
   {
-    "username": "user3",
-    "score": 23,
+    "username": "Michael",
+    "score": 3,
     "difficulty": "E",
     "quiz": "flag"
   },
   {
-    "username": "user4",
-    "score": 78,
+    "username": "Sophia",
+    "score": 12,
     "difficulty": "M",
     "quiz": "flags"
   },
   {
-    "username": "user5",
-    "score": 56,
+    "username": "Liam",
+    "score": 8,
     "difficulty": "E",
     "quiz": "flag"
   },
   {
-    "username": "user6",
-    "score": 91,
+    "username": "Olivia",
+    "score": 0,
     "difficulty": "M",
     "quiz": "flag"
   },
   {
-    "username": "user7",
-    "score": 32,
+    "username": "William",
+    "score": 4,
     "difficulty": "E",
     "quiz": "flag"
   },
   {
-    "username": "user8",
-    "score": 75,
+    "username": "Ava",
+    "score": 9,
     "difficulty": "H",
     "quiz": "flag"
   },
   {
-    "username": "user9",
-    "score": 49,
+    "username": "James",
+    "score": 6,
     "difficulty": "E",
     "quiz": "flag"
   },
   {
-    "username": "user10",
-    "score": 88,
+    "username": "Charlotte",
+    "score": 11,
     "difficulty": "E",
     "quiz": "flag"
   },
   {
-    "username": "user11",
-    "score": 57,
+    "username": "Benjamin",
+    "score": 8,
     "difficulty": "M",
     "quiz": "flag"
   },
   {
-    "username": "user12",
-    "score": 69,
+    "username": "Mia",
+    "score": 10,
     "difficulty": "H",
     "quiz": "flag"
   },
   {
-    "username": "user13",
-    "score": 40,
+    "username": "Daniel",
+    "score": 6,
     "difficulty": "H",
     "quiz": "flag"
   },
   {
-    "username": "user14",
-    "score": 82,
+    "username": "Sophie",
+    "score": 11,
     "difficulty": "M",
     "quiz": "flags"
   }
-
 ]
