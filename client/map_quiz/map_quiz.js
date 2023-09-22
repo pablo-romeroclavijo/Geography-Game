@@ -40,6 +40,7 @@ function submituser(e){
 
 function startQuiz(q){
   block.style.display = 'block'
+  submit.innerHTML = ''
 
   const randomIndex = Math.floor(Math.random()*q.length)
   console.log(randomIndex)
@@ -188,13 +189,20 @@ async function fetchImage(type,ID) {
 }
 //posting images
 async function postScore(username){
+  const dict = {
+    'M': 'Medium',
+    'E': 'Easy',
+    'H': 'Hard',
+    'all': 'All levels',
+  }
+
   const data = {
     'username': username,
     'score' : score,
-    'difficulty': level,
-    'quiz': 'Map Quiz'
+    'difficulty': dict[level],
+    'quiz': 'Flag Quiz'
   }
-  console.log(data)
+
   const options = {
     method: "POST",
     headers: {
@@ -207,7 +215,7 @@ async function postScore(username){
       if(response.ok){
         console.log('Record created')
 
-        location.href = `/client/score-page/scorePage.html?username=${username}&score=${score}&quiz=FlagQuiz`
+        location.href = `/client/score-page/scorePage.html?username=${username}&score=${score}&quiz=MapQuiz`
       }else {throw 'Error status: ' + response.status
     }
     }catch(e){console.log('error at  catch')}
